@@ -4225,3 +4225,6 @@
 {"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
 {"context":{},"level":"info","message":"Listening to port 5001"}
 {"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
