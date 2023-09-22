@@ -1,0 +1,33 @@
+{    
+    "env": "dev",
+    "mongodb": {
+        "database": "bcoder",
+        "host": "mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/"
+    },
+    "webServer": {
+        "port": 5001
+    },
+    "auth": {
+        "secret": "hhhhhhhhhhsgaaaaaaaaax",
+        "refreshSecret": "UHVJhbjhbvfeHbbJKcndKJbBKkbkjbBKBbkb",
+        "tokenPeriod": "365d",
+        "refreshPeriod": "365d"
+    },
+    "logger": {
+        "console": {
+            "level": "silly",
+            "handleExceptions": true,
+            "json": false,
+            "colorize": true
+        },
+        "file": {
+            "filename": "logs/logs.txt",
+            "level": "silly",
+            "handleExceptions": true,
+            "json": true,
+            "maxSize": 512000,
+            "maxFiles": 5,
+            "colorize": false
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "dev",
+        "program": "${workspaceFolder}/index.js",
+        "env": {
+          "NODE_ENV": "dev"
+        }
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "local",
+        "program": "${workspaceFolder}/index.js",
+        "env": {
+          "NODE_ENV": "localConfig"
+        }
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "prod",
+        "program": "${workspaceFolder}/index.js",
+        "env": {
+          "NODE_ENV": "prod"
+        }
+      }
+    ]
+  }
