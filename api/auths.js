@@ -4,7 +4,7 @@ const jwtToken = require("../helpers/jwt");
 const authService = require("../services/auth");
 const mapper = require("../mappers/user");
 const check = require("../validators/auth");
-const utils = require("../helpers/utils")
+const utils = require("../helpers/utils");
 
 exports.signup = async (req, res) => {
   let validate = await check.canRegister(req);
@@ -55,13 +55,13 @@ exports.login = async (req, res) => {
 
 exports.logout = async (req, res) => {
   try {
-    let userInfo = await db.user.findById(req.params.id , {token: 1});
-    if (userInfo) { 
-        userInfo.token = null;
-    };
-    
+    let userInfo = await db.user.findById(req.params.id, { token: 1 });
+    if (userInfo) {
+      userInfo.token = null;
+    }
+
     await userInfo.save();
-    return res.data(userInfo , {message: "user logout successfully"});
+    return res.data(userInfo, { message: "user logout successfully" });
   } catch (error) {
     return res.failure(error);
   }
@@ -73,13 +73,16 @@ exports.setPassword = async (req, res) => {
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }
-    let {oldPassword,newPassword, confirmPassword} =  req.body;
+    let { oldPassword, newPassword, confirmPassword } = req.body;
     let findUser = await db.user.findById(req.params.id);
-    let match = await crypto.comparePassword(req.body.oldPassword , findUser.password);
-      if(!match){
-        throw "old password not match";
-      }
-    if(!(newPassword === confirmPassword)){
+    let match = await crypto.comparePassword(
+      req.body.oldPassword,
+      findUser.password
+    );
+    if (!match) {
+      throw "old password not match";
+    }
+    if (!(newPassword === confirmPassword)) {
       throw "confirm password not match";
     }
     findUser.password = await crypto.setPassword(newPassword);
@@ -100,11 +103,11 @@ exports.changePassword = async (req, res) => {
     //   if(!match){
     //     throw "old password not match";
     //   }
-      let newPassword = req.body.newPassword;
-      let confermNewPassword = req.body.confermNewPassword;
-      if(!(newPassword === confermNewPassword)){
-        throw "confirm password not match";
-      }
+    let newPassword = req.body.newPassword;
+    let confermNewPassword = req.body.confermNewPassword;
+    if (!(newPassword === confermNewPassword)) {
+      throw "confirm password not match";
+    }
     findUser.password = await crypto.setPassword(newPassword);
     await findUser.save();
     return res.data("password updated succsessfully");
@@ -113,16 +116,15 @@ exports.changePassword = async (req, res) => {
   }
 };
 
-exports.forgotPassword = async (req,res) => {
-    try {
-      let  data = req.body;
-      let user = await db.user.findById(req.params.id);
-      let otpCode = await utils.randomPin(6)
-      user.otp = otpCode
-      await user.save();
-      return res.data(user);
-    }
-     catch (error) {
-      return res.failure(error)
-    }
-}
+exports.forgotPassword = async (req, res) => {
+  try {
+    let data = req.body;
+    let user = await db.user.findById(req.params.id);
+    let otpCode = await utils.randomPin(6);
+    user.otp = otpCode;
+    await user.save();
+    return res.data(user);
+  } catch (error) {
+    return res.failure(error);
+  }
+};
