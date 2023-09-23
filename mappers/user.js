@@ -12,7 +12,8 @@ exports.toModel = (entity) => {
           status: entity.status,
           loginType: entity.loginType,
           token:entity.token,
-          roleId : entity.roleId
+          roleId : entity.roleId,
+          otp: entity.otp
      };
      return model;
 };
@@ -36,7 +37,8 @@ exports.newEntity = async (body, createdByAdmin = true) => {
           email: body.email,
           loginType: body.loginType,
           token:body.token,
-          roleId: body.roleId
+          roleId: body.roleId,
+          otp: body.otp
      };
      if (body.password) {
           model.password = await crypto.setPassword(body.password);

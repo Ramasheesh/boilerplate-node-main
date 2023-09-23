@@ -57,7 +57,7 @@ module.exports.configure = (app, endpoints) => {
     {
       action: "POST",
       method: "logout",
-      url: "/logout",
+      url: "/logout/:id",
       filter: auth.validateToken,
     },
     {
@@ -66,6 +66,18 @@ module.exports.configure = (app, endpoints) => {
       url: "/setPassword/:id",
       filter: auth.validateToken,
     },
+    {
+      action: "POST",
+      method: "changePassword",
+      url: "/changePassword/:id",
+      // filter: auth.validateToken,
+    },
+    {
+      action: "POST",
+      method: "forgotPassword",
+      url: "/forgotPassword/:id",
+    },
+    
   ]);
 
   api.model("users").register([

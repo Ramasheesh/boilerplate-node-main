@@ -99,12 +99,32 @@ exports.canSetPassword = (req) => {
   let data = {
        isSuccess: false,
   };
-  if (!req.body) {
-       data.message = 'invalid request';
+  if (!req.body.newPassword) {
+       data.message = 'newPassword is required';
+       return data;
+  };
+  if (!req.body.confirmPassword) {
+       data.message = 'confirmPassword is required';
        return data;
   }
-  if (!req.body.password) {
-       data.message = 'password required';
+
+  data.isSuccess = true;
+  return data;
+};
+exports.canResetPassword = (req) => {
+  let data = {
+       isSuccess: false,
+  };
+  if (!req.body.oldPassword) {
+       data.message = 'old Password is required';
+       return data;
+  };
+  if (!req.body.newPassword) {
+       data.message = 'newPassword is required';
+       return data;
+  };
+  if (!req.body.confermNewPassword) {
+       data.message = 'confermNewPassword is required';
        return data;
   }
 

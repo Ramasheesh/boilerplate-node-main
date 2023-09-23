@@ -19,5 +19,6 @@ module.exports = {
      isTokenExpire : {type : Boolean , default: false },
      // isLoggedIn: false,
      token:String,
+     otp:String,
      lastLogin: Date
 };

@@ -41,6 +41,7 @@ exports.canUpdate = (req) => {
      data.isSuccess = true;
      return data;
 };
+
 exports.canSend = (req) => {
      let data = {
           isSuccess: false,
