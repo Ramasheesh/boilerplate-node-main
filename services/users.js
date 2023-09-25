@@ -51,7 +51,7 @@ exports.search = async (query, page) => {
     {
       path: "roleId",
       match: { roleType: { $ne: "superAdmin" } },
-      // select: "-roleType",
+      // match: { select: "-roleType" },
     },
   ];
   if (query.fullName) {
@@ -63,15 +63,16 @@ exports.search = async (query, page) => {
   let items;
   if (page) {
     items = await db.user
-      .find(where, { projection: { roleId: 0 } })
+      .find(where,)
       .skip(page.skip)
       .limit(page.limit)
       .sort({ createdAt: -1 })
       .populate(populate);
   } else {
     items = db.user
-      .find(where, { projection: { roleId: 0 } })
-      .sort({ createdAt: -1 });
+      .find(where) // { roleId: 0 }
+      .sort({ createdAt: -1 })
+      .populate(populate);
   }
   return {
     count,
