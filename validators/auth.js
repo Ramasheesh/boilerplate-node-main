@@ -123,8 +123,8 @@ exports.canResetPassword = (req) => {
        data.message = 'newPassword is required';
        return data;
   };
-  if (!req.body.confermNewPassword) {
-       data.message = 'confermNewPassword is required';
+  if (!req.body.confirmNewPassword) {
+       data.message = 'confirmNewPassword is required';
        return data;
   }
 

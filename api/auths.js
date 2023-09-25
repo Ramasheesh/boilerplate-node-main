@@ -37,7 +37,7 @@ exports.login = async (req, res) => {
     if (!passwordIsValid) {
       return res.failure("Invalid password");
     } else {
-      // genrate token and save token in user
+      // generate token and save token in user
       user.token = await jwtToken.jwtSign({
         id: user.id,
         email: user.email,
@@ -87,7 +87,7 @@ exports.setPassword = async (req, res) => {
     }
     findUser.password = await crypto.setPassword(newPassword);
     await findUser.save();
-    return res.data("password updated succsessfully");
+    return res.data("password updated successfully");
   } catch (error) {
     return res.failure(error);
   }
@@ -99,18 +99,14 @@ exports.changePassword = async (req, res) => {
       return res.failure(validate.message);
     }
     let findUser = await db.user.findById(req.params.id);
-    // let match = await crypto.comparePassword(req.body.oldPassword , findUser.password);
-    //   if(!match){
-    //     throw "old password not match";
-    //   }
     let newPassword = req.body.newPassword;
-    let confermNewPassword = req.body.confermNewPassword;
-    if (!(newPassword === confermNewPassword)) {
+    let confirmNewPassword = req.body.confirmNewPassword;
+    if (!(newPassword === confirmNewPassword)) {
       throw "confirm password not match";
     }
     findUser.password = await crypto.setPassword(newPassword);
     await findUser.save();
-    return res.data("password updated succsessfully");
+    return res.data("password updated successfully");
   } catch (error) {
     return res.failure(error);
   }

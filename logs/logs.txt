@@ -4916,3 +4916,329 @@
 {"context":{},"level":"info","message":"Listening to port 5001"}
 {"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
 {"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"admin@gmail.com","id":"650c48eb02ffc3ec98bb55a7","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c48ee02ffc3ec98bb55a9","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c476717718771652a9675","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c48b102ffc3ec98bb55a5","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c477da214a0ddb38405e1","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c475c13df13364a0ae575","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c472df1b8a6d6b36c63ea","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c46b4f1b8a6d6b36c63e8","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c4736f1b8a6d6b36c63ec","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c4858f90ddacab519ebbb","isEmailVerified":false,"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":10,"totalRecords":10}
+{"context":{"location":"GET /api/users?lastName=Chauhan","method":"GET","url":"/api/users?lastName=Chauhan"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?lastName=Chauhan","method":"GET","url":"/api/users?lastName=Chauhan"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?lastName=Chauhan","method":"GET","url":"/api/users?lastName=Chauhan"},"isSuccess":true,"items":[{"email":"admin@gmail.com","id":"650c48eb02ffc3ec98bb55a7","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c48ee02ffc3ec98bb55a9","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c476717718771652a9675","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c48b102ffc3ec98bb55a5","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c477da214a0ddb38405e1","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c475c13df13364a0ae575","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c472df1b8a6d6b36c63ea","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c46b4f1b8a6d6b36c63e8","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c4736f1b8a6d6b36c63ec","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c4858f90ddacab519ebbb","isEmailVerified":false,"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":10,"totalRecords":10}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"debug","message":{"email":"12ab@gmail.com","firstName":"Ab","fullName":"Aman Singh","lastName":"Bv","password":"123","roleId":"650c40d3f1b8a6d6b36c63e4"}}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"data":{"email":"12ab@gmail.com","firstName":"Ab","id":"65111dba9e4c254f6d6fc3e4","isEmailVerified":false,"lastName":"Bv","roleId":"650c40d3f1b8a6d6b36c63e4","status":"pending"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"took: 0.308 second(s)","took":0.308}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"debug","message":{"email":"12ab@gmail.com","firstName":"Ab","fullName":"Aman Singh","lastName":"Bv","password":"123","roleId":"650c40d3f1b8a6d6b36c63e4"}}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"data":{"email":"12ab@gmail.com","firstName":"Ab","fullName":"Aman Singh","id":"65111e59c70e2e1fb08f7a30","isEmailVerified":false,"lastName":"Bv","roleId":"650c40d3f1b8a6d6b36c63e4","status":"pending"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"took: 0.253 second(s)","took":0.253}
+{"context":{"location":"GET /api/users?fullName=Chauhan","method":"GET","url":"/api/users?fullName=Chauhan"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Chauhan","method":"GET","url":"/api/users?fullName=Chauhan"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Chauhan","method":"GET","url":"/api/users?fullName=Chauhan"},"isSuccess":true,"items":[{"email":"admin@gmail.com","id":"650c48eb02ffc3ec98bb55a7","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c48ee02ffc3ec98bb55a9","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c476717718771652a9675","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c48b102ffc3ec98bb55a5","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c477da214a0ddb38405e1","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c475c13df13364a0ae575","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c472df1b8a6d6b36c63ea","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c46b4f1b8a6d6b36c63e8","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c4736f1b8a6d6b36c63ec","isEmailVerified":false,"status":"active"},{"email":"admin@gmail.com","id":"650c4858f90ddacab519ebbb","isEmailVerified":false,"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":10,"totalRecords":10}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users?fullName=aman","method":"GET","url":"/api/users?fullName=aman"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=aman","method":"GET","url":"/api/users?fullName=aman"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=aman","method":"GET","url":"/api/users?fullName=aman"},"isSuccess":true,"items":[],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":0,"totalRecords":0}
+{"context":{"location":"GET /api/users?fullName=Aman","method":"GET","url":"/api/users?fullName=Aman"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman","method":"GET","url":"/api/users?fullName=Aman"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman","method":"GET","url":"/api/users?fullName=Aman"},"isSuccess":true,"items":[],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":0,"totalRecords":0}
+{"context":{"location":"GET /api/users?fullName=singh","method":"GET","url":"/api/users?fullName=singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=singh","method":"GET","url":"/api/users?fullName=singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=singh","method":"GET","url":"/api/users?fullName=singh"},"isSuccess":true,"items":[],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":0,"totalRecords":0}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"isSuccess":true,"items":[{"email":"12ab@gmail.com","firstName":"Ab","fullName":"Aman Singh","id":"65111e59c70e2e1fb08f7a30","isEmailVerified":false,"lastName":"Bv","roleId":"650c40d3f1b8a6d6b36c63e4","status":"pending"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":1,"totalRecords":1}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"isSuccess":true,"items":[{"email":"12ab@gmail.com","firstName":"Ab","fullName":"Aman Singh","id":"65111e59c70e2e1fb08f7a30","isEmailVerified":false,"lastName":"Bv","roleId":"650c40d3f1b8a6d6b36c63e4","status":"pending"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":1,"totalRecords":1}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"isSuccess":true,"items":[{"email":"12ab@gmail.com","firstName":"Ab","fullName":"Aman Singh","id":"65111e59c70e2e1fb08f7a30","isEmailVerified":false,"lastName":"Bv","roleId":"650c40d3f1b8a6d6b36c63e4","status":"pending"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":1,"totalRecords":1}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"name":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"651120a71020cd2c5e2ba408","name":"admin"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.096 second(s)","took":0.096}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"name":"admin","roleType":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"6511235cb54a0f3f8d6c0132"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.108 second(s)","took":0.108}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"name":"manish","roleType":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"6511236eb54a0f3f8d6c0134"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.182 second(s)","took":0.182}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"name":"manish","roleType":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"651123c8b54a0f3f8d6c0136"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.064 second(s)","took":0.064}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"debug","message":{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","lastName":"sd","password":"123","roleId":"650c40d3f1b8a6d6b36c63e4","status":"active"}}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"data":{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"65112464b54a0f3f8d6c0138","isEmailVerified":false,"lastName":"sd","roleId":"650c40d3f1b8a6d6b36c63e4","status":"active"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"took: 0.23 second(s)","took":0.23}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"name":"manish","roleType":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"651124b53cf61339f32b87fd","name":"manish"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.079 second(s)","took":0.079}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"authType":"google","name":"manish","roleType":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"65112542b443d092b8abe330","name":"manish"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.07 second(s)","took":0.07}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"authType":"google","name":"manish","roleType":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"65112544b443d092b8abe332","name":"manish"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.065 second(s)","took":0.065}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"name":"manish","roleType":"admin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.086 second(s)","took":0.086}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"debug","message":{"name":"manish","roleType":"superAdmin"}}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"data":{"id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/roles","method":"POST","url":"/api/roles"},"level":"silly","message":"took: 0.048 second(s)","took":0.048}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"isSuccess":false,"level":"error","message":"failed TypeError: db.countDocuments is not a function\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\services\\users.js:63:26)\n    at Object.search (X:\\bCoderTask\\boilerplate-node-main\\api\\api-base.js:74:44)\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\api\\users.js:34:29)\n    at Layer.handle [as handle_request] (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at exports.validateToken (X:\\bCoderTask\\boilerplate-node-main\\middlewares\\auth.js:105:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"isSuccess":false,"level":"error","message":"failed StrictPopulateError: Cannot populate path `roleType` because it is not in your schema. Set the `strictPopulate` option to false to override.\n    at getModelsMapForPopulate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:49:12)\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4354:21)\n    at _populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4314:5)\n    at X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4286:5\n    at new Promise (<anonymous>)\n    at Function.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4285:10)\n    at model.Query._find (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:2316:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async model.Query.exec (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:4430:11)\n    at async exports.search (X:\\bCoderTask\\boilerplate-node-main\\services\\users.js:59:13)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"isSuccess":false,"level":"error","message":"failed MissingSchemaError: Schema hasn't been registered for model \"roles\".\nUse mongoose.model(name, schema)\n    at Connection.model (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\connection.js:1125:13)\n    at _getModelFromConn (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:581:15)\n    at addModelNamesToMap (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:508:17)\n    at getModelsMapForPopulate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:199:7)\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4354:21)\n    at _populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4314:5)\n    at X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4286:5\n    at new Promise (<anonymous>)\n    at Function.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4285:10)\n    at model.Query._find (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:2316:20)"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"debug","message":{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","lastName":"sd","password":"123","roleId":"650c40d3f1b8a6d6b36c63e4","status":"active"}}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"data":{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","roleId":"650c40d3f1b8a6d6b36c63e4","status":"active"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"took: 0.31 second(s)","took":0.31}
+{"context":{"location":"POST /api/auths/login","method":"POST","url":"/api/auths/login"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/auths/login","method":"POST","url":"/api/auths/login"},"level":"debug","message":{"email":"00ab@gmail.com","password":"123"}}
+{"context":{"location":"POST /api/auths/login","method":"POST","url":"/api/auths/login"},"data":{"__v":0,"_id":"6511297633b7f0dc91f55511","authType":"email","email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","isEmailVerified":false,"isTokenExpire":false,"lastName":"sd","otp":null,"password":"$2a$10$51.MXT2TX.ZbCN6qwql85.d8H5hj20vu8WF.AFN9ujVUjvGAmeJb6","roleId":"650c40d3f1b8a6d6b36c63e4","status":"active","timeStamp":"2023-09-25T06:32:22.834Z","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/auths/login","method":"POST","url":"/api/auths/login"},"level":"silly","message":"took: 0.195 second(s)","took":0.195}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=Aman%20Singh","method":"GET","url":"/api/users?fullName=Aman%20Singh"},"isSuccess":true,"items":[],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":0,"totalRecords":0}
+{"context":{"location":"GET /api/users?fullName=manish","method":"GET","url":"/api/users?fullName=manish"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=manish","method":"GET","url":"/api/users?fullName=manish"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=manish","method":"GET","url":"/api/users?fullName=manish"},"isSuccess":true,"items":[],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":0,"totalRecords":0}
+{"context":{"location":"GET /api/users?fullName=manish","method":"GET","url":"/api/users?fullName=manish"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users?fullName=manish","method":"GET","url":"/api/users?fullName=manish"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users?fullName=manish","method":"GET","url":"/api/users?fullName=manish"},"isSuccess":true,"items":[],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":0,"totalRecords":0}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed MissingSchemaError: Schema hasn't been registered for model \"roles\".\nUse mongoose.model(name, schema)\n    at Connection.model (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\connection.js:1125:13)\n    at _getModelFromConn (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:581:15)\n    at addModelNamesToMap (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:508:17)\n    at getModelsMapForPopulate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:199:7)\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4354:21)\n    at _populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4314:5)\n    at X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4286:5\n    at new Promise (<anonymous>)\n    at Function.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4285:10)\n    at model.Query._find (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:2316:20)"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed MissingSchemaError: Schema hasn't been registered for model \"roles\".\nUse mongoose.model(name, schema)\n    at Connection.model (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\connection.js:1125:13)\n    at _getModelFromConn (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:581:15)\n    at addModelNamesToMap (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:508:17)\n    at getModelsMapForPopulate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:199:7)\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4354:21)\n    at _populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4314:5)\n    at X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4286:5\n    at new Promise (<anonymous>)\n    at Function.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4285:10)\n    at model.Query._find (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:2316:20)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed MissingSchemaError: Schema hasn't been registered for model \"roles\".\nUse mongoose.model(name, schema)\n    at Connection.model (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\connection.js:1125:13)\n    at _getModelFromConn (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:581:15)\n    at addModelNamesToMap (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:508:17)\n    at getModelsMapForPopulate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:199:7)\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4354:21)\n    at _populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4314:5)\n    at X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4286:5\n    at new Promise (<anonymous>)\n    at Function.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4285:10)\n    at model.Query._find (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:2316:20)"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed MissingSchemaError: Schema hasn't been registered for model \"roles\".\nUse mongoose.model(name, schema)\n    at Connection.model (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\connection.js:1125:13)\n    at _getModelFromConn (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:581:15)\n    at addModelNamesToMap (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:508:17)\n    at getModelsMapForPopulate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:199:7)\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4354:21)\n    at _populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4314:5)\n    at X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4286:5\n    at new Promise (<anonymous>)\n    at Function.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\model.js:4285:10)\n    at model.Query._find (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:2316:20)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"650c40d3f1b8a6d6b36c63e4","name":"admin","roleType":"manager","timeStamp":"2023-09-21T13:10:43.190Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":1,"totalRecords":1}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed TypeError: utils.populate: invalid path. Expected string. Got typeof `object`\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\utils.js:564:11)\n    at Query.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:4777:30)\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\services\\users.js:63:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.search (X:\\bCoderTask\\boilerplate-node-main\\api\\api-base.js:74:24)\n    at async exports.search (X:\\bCoderTask\\boilerplate-node-main\\api\\users.js:34:18)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed ReferenceError: user is not defined\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\services\\users.js:53:3)\n    at Object.search (X:\\bCoderTask\\boilerplate-node-main\\api\\api-base.js:74:44)\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\api\\users.js:34:29)\n    at Layer.handle [as handle_request] (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at exports.validateToken (X:\\bCoderTask\\boilerplate-node-main\\middlewares\\auth.js:105:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed TypeError: utils.populate: invalid path. Expected string. Got typeof `object`\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\utils.js:564:11)\n    at Query.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:4777:30)\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\services\\users.js:66:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.search (X:\\bCoderTask\\boilerplate-node-main\\api\\api-base.js:74:24)\n    at async exports.search (X:\\bCoderTask\\boilerplate-node-main\\api\\users.js:34:18)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"650c40d3f1b8a6d6b36c63e4","name":"admin","roleType":"manager","timeStamp":"2023-09-21T13:10:43.190Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":1,"totalRecords":1}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":0,"totalRecords":0}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":1,"totalRecords":1}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"started"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"debug","message":{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","lastName":"c","password":"123","roleId":"6511259cdad3c0a936cee406","status":"active"}}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"data":{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":"6511259cdad3c0a936cee406","status":"active"},"isSuccess":true,"level":"silly","message":"success"}
+{"context":{"location":"POST /api/auths/signup","method":"POST","url":"/api/auths/signup"},"level":"silly","message":"took: 0.246 second(s)","took":0.246}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":"65112581dad3c0a936cee404","status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":"6511259cdad3c0a936cee406","status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed ReferenceError: user is not defined\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\services\\users.js:56:3)\n    at Object.search (X:\\bCoderTask\\boilerplate-node-main\\api\\api-base.js:74:44)\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\api\\users.js:34:29)\n    at Layer.handle [as handle_request] (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at exports.validateToken (X:\\bCoderTask\\boilerplate-node-main\\middlewares\\auth.js:105:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":false,"level":"error","message":"failed TypeError: utils.populate: invalid path. Expected string. Got typeof `object`\n    at populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\utils.js:564:11)\n    at Query.populate (X:\\bCoderTask\\boilerplate-node-main\\node_modules\\mongoose\\lib\\query.js:4777:30)\n    at exports.search (X:\\bCoderTask\\boilerplate-node-main\\services\\users.js:70:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.search (X:\\bCoderTask\\boilerplate-node-main\\api\\api-base.js:74:24)\n    at async exports.search (X:\\bCoderTask\\boilerplate-node-main\\api\\users.js:34:18)"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{},"database":"bcoder","host":"mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/","level":"info","message":"connecting to"}
+{"context":{},"level":"info","message":"Listening to port 5001"}
+{"context":{},"level":"info","message":"mongo Connected"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"silly","message":"started"}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"level":"debug","message":{}}
+{"context":{"location":"GET /api/users","method":"GET","url":"/api/users"},"isSuccess":true,"items":[{"email":"00ab@gmail.com","firstName":"sd","fullName":"mainsh","id":"6511297633b7f0dc91f55511","isEmailVerified":false,"lastName":"sd","otp":null,"roleId":{"__v":0,"_id":"65112581dad3c0a936cee404","name":"manish","roleType":"admin","timeStamp":"2023-09-25T06:15:29.117Z"},"status":"active","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MTEyOTc2MzNiN2YwZGM5MWY1NTUxMSIsImVtYWlsIjoiMDBhYkBnbWFpbC5jb20iLCJpYXQiOjE2OTU2MjM2MDQsImV4cCI6MTcyNzE1OTYwNH0._vnUOWiU0xHDPRYcwWp1bfPGr9G1ldITc6iAWM1YPMY"},{"email":"aman@gmail.com","firstName":"s","fullName":"Aman","id":"65112eacef6af223eeb04de2","isEmailVerified":false,"lastName":"c","roleId":{"__v":0,"_id":"6511259cdad3c0a936cee406","name":"manish","roleType":"superAdmin","timeStamp":"2023-09-25T06:15:56.278Z"},"status":"active"}],"level":"info","message":"page","pageNo":1,"pageSize":10,"total":2,"totalRecords":2}

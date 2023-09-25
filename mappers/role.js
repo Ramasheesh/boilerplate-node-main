@@ -4,17 +4,15 @@ exports.toModel = (entity) => {
   const model = {
     id: entity._id,
     name: entity.name,
-    type: entity.type,
-    role: entity.role,
+    roleType: entity.roleType,
   };
   return model;
 };
 
 exports.newEntity = async (body) => {
   const model = {
-    type: body.type,
     name: body.name,
-    role: body.role,
+    roleType: body.roleType,
   };
   return model;
 };

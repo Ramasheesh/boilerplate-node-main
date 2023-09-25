@@ -3,8 +3,8 @@ const mapper = require("../mappers/role");
 // const updateEntities = require('../helpers/updateEntities');
 
 const set = (model, entity) => {
-  // return updateEntities(model, entity);
-  // return console.log({ message: " not update"});
+  return updateEntities(model, entity);
+  return console.log({ message: " not update"});
 };
 
 const getById = async (id) => {

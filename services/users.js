@@ -2,24 +2,16 @@
 const mapper = require("../mappers/user");
 const _ = require("underscore");
 const moment = require("moment");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const updateEntities = require("../helpers/updateEntities");
 const populate = [
-  // {
-  //      path: 'role',
-  // },
-  // {
-  //      path: 'profiles',
-  // },
-  // {
-  //      path: 'currentProfile',
-  // },
-  // {
-  //      path: 'userPlan',
-  // },
+  {
+    path: "roleId",
+    $ne: { roleType: "superAdmin" },
+  },
 ];
 
-const ObjectId = mongoose.Types.ObjectId
+const ObjectId = mongoose.Types.ObjectId;
 
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
@@ -51,16 +43,21 @@ exports.update = async (id, model) => {
     throw error;
   }
 };
-exports.search = async (query, page) => {
+exports.search = async (query, page, user) => {
   let where = {};
   // if (query.id) {
   //   where["_id"] = query.id;
   // }
-  if(query.firstName){
-    where['firstName'] = query.firstName
+  if (query.fullName) {
+    where["fullName"] = query.fullName;
+  }
+  if (user.roleId.roleType === "superAdmin") {
+    where._id = { $ne: user.id };
+    // user.roleId.roleType = ""
   }
 
   const count = await db.user.countDocuments(where);
+  // console.log("count: ", count);
   let items;
   if (page) {
     items = await db.user
@@ -68,9 +65,9 @@ exports.search = async (query, page) => {
       .skip(page.skip)
       .limit(page.limit)
       .sort({ createdAt: -1 })
-      // .populate(popuroutelate);
+      .populate(populate);
   } else {
-    items = db.user.find(where).sort({ createdAt: -1 })//.populate(populate);
+    items = db.user.find(where).sort({ createdAt: -1 }); //.populate(populate);
   }
   return {
     count,
@@ -82,7 +79,7 @@ exports.get = async (query) => {
   try {
     if (typeof query === "string") {
       // if (query.isObjectId()) {
-        return getById(query);
+      return getById(query);
       // }
       // let data = await db.user.findById(query);
       // console.log("data: ", data);

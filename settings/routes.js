@@ -119,6 +119,7 @@ module.exports.configure = (app, endpoints) => {
       action: "PUT",
       method: "update",
       url: "/:id",
+      filter: auth.validateToken,
     },
     {
       action: "GET",
