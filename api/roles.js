@@ -1,4 +1,4 @@
-const base = require('./api-base')('roles','role');// role of services and role of mapper
+const base = require("./api-base")("roles", "role"); // role of services and role of mapper
 const check = require("../validators/roles");
 
 exports.create = async (req, res) => {
@@ -14,7 +14,7 @@ exports.create = async (req, res) => {
   }
 };
 
-exports.update = async (req, res) => { 
+exports.update = async (req, res) => {
   try {
     let validate = await check.canUpdate(req);
     if (!validate.isSuccess) {
@@ -49,7 +49,7 @@ exports.get = async (req, res) => {
   } catch (error) {
     res.failure(error);
   }
-};
+}; 
 
 exports.delete = async (req, res) => {
   try {
