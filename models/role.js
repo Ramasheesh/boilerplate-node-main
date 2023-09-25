@@ -3,6 +3,6 @@ module.exports = {
   roleType: {
     type: String,
     enum: ["user", "admin", "superAdmin", "manager"],
-    default: "manager",
+    default: "",
   },
 };

@@ -11,7 +11,7 @@ const populate = [
     path: "roleId",
   },
 ];
-// 
+//
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
 };
@@ -48,23 +48,30 @@ exports.search = async (query, page) => {
   //   where["_id"] = query.id;
   // }
   const populate = [
-    { path: "roleId", match: { roleType: { $ne: "superAdmin", } } },
+    {
+      path: "roleId",
+      match: { roleType: { $ne: "superAdmin" } },
+      // select: "-roleType",
+    },
   ];
   if (query.fullName) {
     where["fullName"] = query.fullName;
   }
+
   const count = await db.user.countDocuments(where);
   // console.log("count: ", count);
   let items;
   if (page) {
     items = await db.user
-      .find(where)
+      .find(where, { projection: { roleId: 0 } })
       .skip(page.skip)
       .limit(page.limit)
       .sort({ createdAt: -1 })
       .populate(populate);
   } else {
-    items = db.user.find(where).sort({ createdAt: -1 }).populate(populate);
+    items = db.user
+      .find(where, { projection: { roleId: 0 } })
+      .sort({ createdAt: -1 });
   }
   return {
     count,

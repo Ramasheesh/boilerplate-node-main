@@ -16,3 +16,19 @@ exports.canCreate = (req) => {
   data.isSuccess = true;
   return data;
 };
+exports.canUpdate = (req) => {
+  let data = {
+    isSuccess: false,
+  };
+  if (!req.body.name) {
+    data.message = "name is required";
+    return data;
+  }
+  if (!req.body.roleType) {
+    data.message = "roleType is required";
+    return data;
+  }
+
+  data.isSuccess = true;
+  return data;
+};

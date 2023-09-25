@@ -1,6 +1,5 @@
 const base = require("./api-base")("roles", "role"); // role of services and role of mapper
 const check = require("../validators/roles");
-
 exports.create = async (req, res) => {
   try {
     let validate = await check.canCreate(req);
