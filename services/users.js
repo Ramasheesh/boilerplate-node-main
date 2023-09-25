@@ -4,15 +4,14 @@ const _ = require("underscore");
 const moment = require("moment");
 const mongoose = require("mongoose");
 const updateEntities = require("../helpers/updateEntities");
+const ObjectId = mongoose.Types.ObjectId;
+
 const populate = [
   {
     path: "roleId",
-    $ne: { roleType: "superAdmin" },
   },
 ];
-
-const ObjectId = mongoose.Types.ObjectId;
-
+// 
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
 };
@@ -43,19 +42,17 @@ exports.update = async (id, model) => {
     throw error;
   }
 };
-exports.search = async (query, page, user) => {
+exports.search = async (query, page) => {
   let where = {};
   // if (query.id) {
   //   where["_id"] = query.id;
   // }
+  const populate = [
+    { path: "roleId", match: { roleType: { $ne: "superAdmin", } } },
+  ];
   if (query.fullName) {
     where["fullName"] = query.fullName;
   }
-  if (user.roleId.roleType === "superAdmin") {
-    where._id = { $ne: user.id };
-    // user.roleId.roleType = ""
-  }
-
   const count = await db.user.countDocuments(where);
   // console.log("count: ", count);
   let items;
@@ -67,7 +64,7 @@ exports.search = async (query, page, user) => {
       .sort({ createdAt: -1 })
       .populate(populate);
   } else {
-    items = db.user.find(where).sort({ createdAt: -1 }); //.populate(populate);
+    items = db.user.find(where).sort({ createdAt: -1 }).populate(populate);
   }
   return {
     count,
