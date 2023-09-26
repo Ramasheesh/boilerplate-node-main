@@ -41,6 +41,7 @@ exports.login = async (req, res) => {
       user.token = await jwtToken.jwtSign({
         id: user.id,
         email: user.email,
+        roleId:user.roleId
       });
       user.isTokenExpire = false;
       user.otp = null;

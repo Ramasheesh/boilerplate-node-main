@@ -84,6 +84,7 @@ module.exports.configure = (app, endpoints) => {
     {
       action: "POST",
       method: "create",
+      filter:auth.validateToken
     },
     {
       action: "PUT",
@@ -114,29 +115,31 @@ module.exports.configure = (app, endpoints) => {
     {
       action: "POST",
       method: "create",
+      
     },
     {
       action: "PUT",
       method: "update",
       url: "/:id",
-      // filter: auth.validateToken,
+      // filter: auth.authorize('admin', 'update')
+      filter: auth.validateToken,
     },
     {
       action: "GET",
       method: "get",
       url: "/:id",
-      // filter: auth.validateToken,
+      filter: auth.validateToken,
     },
     {
       action: "GET",
       method: "search",
-      // filter: auth.validateToken,
+      filter: auth.validateToken,
     },
     {
       action: "DELETE",
       method: "delete",
       url: "/:id",
-      // filter: auth.validateToken,
+      filter: auth.validateToken,
     },
   ]);
 };

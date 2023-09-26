@@ -31,3 +31,19 @@ exports.verifyToken = (token) => {
      return jwt.verify(token, auth.secret);
 };
 
+// const roles = {
+//   superAdmin: ["create", "update", "get", "search", "delete"],
+//   admin: ["create", "update", "get"],
+//   manager: ["get"],
+// };
+// exports.authorize = (role, action) => {
+//   return (req, res, next) => {
+//     if (roles[role] && roles[role].includes(action)) {
+//       // User has the required role and permission
+//       next();
+//     } else {
+//       // User is not authorized
+//       res.status(403).json({ message: "Access denied." });
+//     }
+//   };
+// }

@@ -1,9 +1,8 @@
 "use strict";
 const mapper = require("../mappers/role");
-const updateEntities = require('../helpers/updateEntities');
-const mongoose = require('mongoose');
+const updateEntities = require("../helpers/updateEntities");
+const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
-
 
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
@@ -17,11 +16,15 @@ const getByCondition = async (condition) => {
   return await db.role.findOne(condition);
 };
 
-const populate = [];
-exports.create = async (model) => {
+// const populate = [
+//   {
+//     path: "roleId"
+//   }
+// ];
+exports.create = async (model ) => {
   try {
+
     let entity = new db.role(await mapper.newEntity(model));
-    
     return await entity.save();
   } catch (error) {
     throw error;
@@ -57,8 +60,9 @@ exports.search = async (query, page) => {
       .sort({ name: 1 })
       .skip(page.skip)
       .limit(page.limit);
+    // .populate(populate);
   } else {
-    items = await db.role.find(where).sort({ name: 1 });
+    items = await db.role.find(where).sort({ name: 1 }); //.populate(populate);;
   }
 
   return {
@@ -70,7 +74,7 @@ exports.search = async (query, page) => {
 exports.get = async (query) => {
   if (typeof query === "string") {
     // if (query.isObjectId()) {
-      return getById(query);
+    return getById(query);
     // }
   }
   if (query.id) {

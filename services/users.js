@@ -9,6 +9,7 @@ const ObjectId = mongoose.Types.ObjectId;
 const populate = [
   {
     path: "roleId",
+    match: { select: "-createdBy" },
   },
 ];
 //
@@ -24,8 +25,41 @@ const getByCondition = async (condition) => {
   return await db.user.findOne(condition).populate(populate);
 };
 
-exports.create = async (model) => {
+exports.create = async (model, user) => {
   try {
+    let roleInfo = await db.role.findById(model.roleId);
+    switch (user.roleId.roleType) {
+      case "superAdmin":
+        if (roleInfo.roleType === "superAdmin") {
+          throw "permission not granted";
+        }
+        model.createdBy = "superAdmin";
+        break;
+
+      case "admin":
+        if (
+          roleInfo.roleType === "admin" ||
+          roleInfo.roleType === "superAdmin"
+        ) {
+          throw "permission not granted";
+        }
+        model.createdBy = "admin";
+        break;
+
+      case "manager":
+        if (
+          roleInfo.roleType === "manager" ||
+          roleInfo.roleType === "admin" ||
+          roleInfo.roleType === "superAdmin"
+        ) {
+          throw "permission not granted";
+        }
+        model.createdBy = "manager";
+        break;
+
+      default:
+        throw "permission not granted";
+    }
     let entity = new db.user(await mapper.newEntity(model));
     return await entity.save();
   } catch (error) {
@@ -33,11 +67,17 @@ exports.create = async (model) => {
   }
 };
 
-exports.update = async (id, model) => {
+exports.update = async (id, model, user) => {
   try {
-    let entity = await db.user.findById(id).populate(populate);
-    set(model, entity);
-    return entity.save();
+    let roleInfo = await db.role.findById(model.roleId);
+
+    if (roleInfo.roleType === "superAdmin" || roleInfo.roleType === "admin") {
+      let entity = await db.user.findById(id).populate(populate);
+      set(model, entity);
+      return entity.save();
+    } else {
+      throw "permission not granted";
+    }
   } catch (error) {
     throw error;
   }
@@ -63,7 +103,7 @@ exports.search = async (query, page) => {
   let items;
   if (page) {
     items = await db.user
-      .find(where,)
+      .find(where)
       .skip(page.skip)
       .limit(page.limit)
       .sort({ createdAt: -1 })
@@ -86,9 +126,6 @@ exports.get = async (query) => {
       // if (query.isObjectId()) {
       return getById(query);
       // }
-      // let data = await db.user.findById(query);
-      // console.log("data: ", data);
-      // return data;
     }
 
     if (query.id) {
@@ -108,7 +145,7 @@ exports.remove = async (id) => {
   try {
     let entity = await this.get(new ObjectId(id));
     if (entity) {
-      return await entity.remove();
+      return await entity.delete();
     }
     return null;
   } catch (error) {

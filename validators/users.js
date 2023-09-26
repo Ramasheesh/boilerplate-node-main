@@ -13,8 +13,8 @@ exports.canCreate = (req) => {
           data.message = 'email is required';
           return data;
      }
-     if (!req.body.firstName) {
-          data.message = 'firstName is required';
+     if (!req.body.fullName) {
+          data.message = "fullName is required";
           return data;
      }
      if (!req.body.password) {

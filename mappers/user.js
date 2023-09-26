@@ -14,6 +14,7 @@ exports.toModel = (entity) => {
     loginType: entity.loginType,
     token: entity.token,
     roleId: entity.roleId,
+    createdBy : entity.createdBy,
     otp: entity.otp,
   };
   return model;
@@ -42,6 +43,7 @@ exports.newEntity = async (body, createdByAdmin = true) => {
     status: body.status,
     token: body.token,
     roleId: body.roleId,
+    createdBy: body.createdBy,
     otp: body.otp,
   };
   if (body.password) {

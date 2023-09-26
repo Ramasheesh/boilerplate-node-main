@@ -1,9 +1,14 @@
-const mongoose =  require('mongoose')
+const mongoose = require("mongoose");
 
 module.exports = {
   fullName: String,
   firstName: String,
   lastName: String,
+  createdBy: {
+    type: String,
+    enum: ["", "admin","superAdmin",'manager'],
+    default: ""
+  },
   roleId: { type: mongoose.Schema.Types.ObjectId, ref: "role" },
   authType: {
     type: String,
