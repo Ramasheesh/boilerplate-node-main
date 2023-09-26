@@ -67,7 +67,7 @@ exports.validateToken = async (req, res, next) => {
     //           success: false,
     //           message: 'session not found',
     //      });
-    // }
+    // // }
     // if (session && session.status === 'expired') {
     //      return res.status(403).send({
     //           success: false,

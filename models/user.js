@@ -4,24 +4,40 @@ module.exports = {
   fullName: String,
   firstName: String,
   lastName: String,
+  // created by role
   createdBy: {
     type: String,
-    enum: ["self", "admin","superAdmin",'manager'],
-    default: ""
+    enum: ["", "admin", "superAdmin", "manager"],
+    default: "",
   },
-  roleId: { type: mongoose.Schema.Types.ObjectId, ref: "role" },
+  // role id
+  roleId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "role",
+  },
+  // profile of user
+  currentProfile: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "profile",
+  },
+  profiles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "profile",
+    },
+  ],
   authType: {
     type: String,
     enum: ["email", "google", "facebook", "apple", "github", "phone"],
     default: "email",
   },
-  email: String,
-  password: String,
   status: {
     type: String,
     enum: ["pending", "active", "inactive", "deleted", "blocked"],
     default: "pending",
   },
+  email: String,
+  password: String,
   isEmailVerified: { type: Boolean, default: false },
   isTokenExpire: { type: Boolean, default: false },
   token: String,

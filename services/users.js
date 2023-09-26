@@ -71,11 +71,6 @@ exports.create = async (model, user) => {
 exports.update = async (id, model, user) => {
   try {
     let roleInfo = await db.role.findById(model.roleId);
-
-    // if (roleInfo.roleType === "superAdmin" || roleInfo.roleType === "self") {
-    // } else {
-    //   throw "permission not granted";
-    // }
     let entity = await db.user.findById(id).populate(populate);
     set(model, entity);
     return entity.save();
@@ -139,9 +134,9 @@ exports.get = async (query) => {
 
 exports.remove = async (id) => {
   try {
-    let entity = await this.get(id);
+    let entity = await db.user.findById(id)
     if (entity) {
-      return await entity.remove();
+      return await db.user.deleteOne({_id:entity.id});
     }
     return null;
   } catch (error) {

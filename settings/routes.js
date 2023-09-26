@@ -142,4 +142,35 @@ module.exports.configure = (app, endpoints) => {
       filter: auth.validateToken,
     },
   ]);
+
+  api.model("profiles").register([
+    {
+      action: "POST",
+      method: "create",
+      filter: auth.validateToken,
+    },
+    {
+      action: "PUT",
+      method: "update",
+      url: "/:id",
+      filter: auth.validateToken,
+    },
+    {
+      action: "GET",
+      method: "get",
+      url: "/:id",
+      filter: auth.validateToken,
+    },
+    {
+      action: "GET",
+      method: "search",
+      filter: auth.validateToken,
+    },
+    {
+      action: "DELETE",
+      method: "delete",
+      url: "/:id",
+      filter: auth.validateToken,
+    },
+  ]);
 };

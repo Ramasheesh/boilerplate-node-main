@@ -24,7 +24,9 @@ exports.canCreate = (req) => {
      if (!req.body.roleId) {
           data.message = 'add role id';
      }
-
+     if (!req.body.currentProfile) {
+     data.message = "add currentProfile";
+     }
      data.isSuccess = true;
      return data;
 };
@@ -115,41 +117,44 @@ exports.canUpdateCarrier = (req) => {
 };
 
 exports.canCreateProfile = (req) => {
-     let data = {
-          isSuccess: false,
-     };
-     if (!req.body) {
-          data.message = "invalid request";
-          return data;
-     }
-     if (!req.body.name) {
-          data.message = "please enter name";
-          return data;
-     }
-     if (!req.body.address1) {
-          data.message = "please enter address1";
-          return data;
-     }
-     if (!req.body.city) {
-          data.message = "please enter city";
-          return data;
-     }
-     if (!req.body.state) {
-          data.message = "please enter state";
-          return data;
-     }
-     if (!req.body.country) {
-          data.message = "please enter country";
-          return data;
-     }
-     if (!req.body.zipCode) {
-          data.message = "please enter zip code";
-          return data;
-     }
-     data.isSuccess = true;
-     return data;
+  let data = {
+    isSuccess: false,
+  };
+  if (!req.body) {
+    data.message = "invalid request";
+    return data;
+  }
+  if (!req.body.name) {
+    data.message = "please enter name";
+    return data;
+  }
+  if (!req.body.fullAddress) {
+    data.message = "please enter address1";
+    return data;
+  }
+  if (!req.body.city) {
+    data.message = "please enter city";
+    return data;
+  }
+//   if (!req.body.state) {
+//     data.message = "please enter state";
+//     return data;
+//   }
+//   if (!req.body.country) {
+//     data.message = "please enter country";
+//     return data;
+//   }
+//   if (!req.body.zipCode) {
+//     data.message = "please enter zip code";
+//     return data;
+//   }
+  if (!req.body.profileType) {
+    data.message = "please enter profileType";
+    return data;
+  }
+  data.isSuccess = true;
+  return data;
 };
-
 
 exports.canAddCustomer = async (req) => {
      let data = {
