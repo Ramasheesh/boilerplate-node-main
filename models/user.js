@@ -6,7 +6,7 @@ module.exports = {
   lastName: String,
   createdBy: {
     type: String,
-    enum: ["", "admin","superAdmin",'manager'],
+    enum: ["self", "admin","superAdmin",'manager'],
     default: ""
   },
   roleId: { type: mongoose.Schema.Types.ObjectId, ref: "role" },

@@ -9,7 +9,8 @@ const ObjectId = mongoose.Types.ObjectId;
 const populate = [
   {
     path: "roleId",
-    match: { select: "-createdBy" },
+    match: { roleType: { $ne: "superAdmin" } },
+    // match: { select: "-createdBy" },
   },
 ];
 //
@@ -48,9 +49,9 @@ exports.create = async (model, user) => {
 
       case "manager":
         if (
-          roleInfo.roleType === "manager" ||
-          roleInfo.roleType === "admin" ||
-          roleInfo.roleType === "superAdmin"
+          roleInfo.roleType != user //=== "manager" ||
+          //   roleInfo.roleType === "admin" ||
+          //   roleInfo.roleType === "superAdmin"
         ) {
           throw "permission not granted";
         }
@@ -71,33 +72,29 @@ exports.update = async (id, model, user) => {
   try {
     let roleInfo = await db.role.findById(model.roleId);
 
-    if (roleInfo.roleType === "superAdmin" || roleInfo.roleType === "admin") {
-      let entity = await db.user.findById(id).populate(populate);
-      set(model, entity);
-      return entity.save();
-    } else {
-      throw "permission not granted";
-    }
+    // if (roleInfo.roleType === "superAdmin" || roleInfo.roleType === "self") {
+    // } else {
+    //   throw "permission not granted";
+    // }
+    let entity = await db.user.findById(id).populate(populate);
+    set(model, entity);
+    return entity.save();
   } catch (error) {
     throw error;
   }
 };
-exports.search = async (query, page) => {
+exports.search = async (query, page, user) => {
   let where = {};
   // if (query.id) {
   //   where["_id"] = query.id;
   // }
-  const populate = [
-    {
-      path: "roleId",
-      match: { roleType: { $ne: "superAdmin" } },
-      // match: { select: "-roleType" },
-    },
-  ];
+
   if (query.fullName) {
     where["fullName"] = query.fullName;
   }
-
+  if (user.id) {
+    where._id = { $ne: user.id };
+  }
   const count = await db.user.countDocuments(where);
   // console.log("count: ", count);
   let items;
@@ -127,7 +124,6 @@ exports.get = async (query) => {
       return getById(query);
       // }
     }
-
     if (query.id) {
       return getById(query.id);
     }
@@ -143,9 +139,9 @@ exports.get = async (query) => {
 
 exports.remove = async (id) => {
   try {
-    let entity = await this.get(new ObjectId(id));
+    let entity = await this.get(id);
     if (entity) {
-      return await entity.delete();
+      return await entity.remove();
     }
     return null;
   } catch (error) {

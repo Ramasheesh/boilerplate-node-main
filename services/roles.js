@@ -16,11 +16,11 @@ const getByCondition = async (condition) => {
   return await db.role.findOne(condition);
 };
 
-// const populate = [
-//   {
-//     path: "roleId"
-//   }
-// ];
+const populate = [
+  {
+    path: "roleId"
+  }
+];
 exports.create = async (model ) => {
   try {
 
@@ -59,8 +59,8 @@ exports.search = async (query, page) => {
       .find(where)
       .sort({ name: 1 })
       .skip(page.skip)
-      .limit(page.limit);
-    // .populate(populate);
+      .limit(page.limit)
+      .populate(populate);
   } else {
     items = await db.role.find(where).sort({ name: 1 }); //.populate(populate);;
   }
