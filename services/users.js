@@ -85,65 +85,53 @@ exports.update = async (id, model, user) => {
 };
 exports.search = async (query, page, user) => {
   let where = {};
-  // if (query.id) {
-  //   where["_id"] = query.id;
-  // }
+
   if (query.fullName) {
     where["fullName"] = query.fullName;
   }
   if (user.id) {
-    where._id = { $ne: user.id };
+    where["_id"] = { $ne: user.id };
   }
   if (query.createdBy) {
     where["createdBy"] = query.createdBy;
   }
   if (query.roleType) {
-    where["roleId.roleType"] = query.roleType;
+    where["user.roleId.roleType"] = query.roleType;
   }
   if (query.roleId) {
     where["roleId"] = new ObjectId(query.roleId);
   }
 
-  const pipeline = [
-    {
-      $lookup: {
-        from: "roles",
-        localField: "roleId",
-        foreignField: "_id",
-        as: "hhhhh",
-      },
-    },
-    {
-      $unwind: {
-        path: "$roleId",
-        preserveNullAndEmptyArrays: true,
-      },
-    },
-  ];
-  let countAggregation = [
-    ...pipeline,
-    { $match: where },
-    { $group: { _id: null, count: { $sum: 1 } } },
-  ];
-  const count = await db.user.aggregate(countAggregation);
+  const pipeline = [];
+  // Add a $match stage to filter documents based on the 'where' criteria.
+  pipeline.push({ $match: where });
 
-  let items;
+  // Optionally, you can add a $sort stage to sort the documents by 'updatedAt'.
+  pipeline.push({ $sort: { updatedAt: -1 } });
+
+  // Optionally, add $skip and $limit stages for pagination if 'page' is provided.
   if (page) {
-    pipeline.push(
-      { $match: where },
-      { $sort: { updatedAt: -1 } },
-      { $skip: page.skip },
-      { $limit: page.limit }
-      // { $populate: populate }
-    );
-    items = await db.user.aggregate(pipeline);
-  } else {
-    pipeline.push({ $match: where }, { $sort: { updatedAt: -1 } });
-    items = await db.user.aggregate(pipeline);
+    const { skip, limit } = page;
+    pipeline.push({ $skip: skip });
+    pipeline.push({ $limit: limit });
   }
+  pipeline.push({
+    $lookup: {
+      from: "roles",
+      localField: "roleId",
+      foreignField: "_id",
+      as: "hhhhh",
+    },
+  });
+  // Perform the aggregation using the pipeline.
+  const result = await db.user.aggregate(pipeline);
+
+  // Count the matching documents separately.
+  const count = await db.user.countDocuments(where);
+
   return {
     count,
-    items,
+    items: result,
   };
 };
 
