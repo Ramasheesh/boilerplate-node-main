@@ -9,7 +9,9 @@ const ObjectId = mongoose.Types.ObjectId;
 const populate = [
   {
     path: "roleId",
-    match: { roleType: { $ne: "superAdmin" } },
+    // match: { roleType: { $ne: "superAdmin" } },
+    // match: { roleType },
+    // match: {createdBy : {$eq: "admin"}}
     // match: { select: "-createdBy" },
   },
 ];
@@ -57,7 +59,10 @@ exports.create = async (model, user) => {
         }
         model.createdBy = "manager";
         break;
-
+      // case "":
+      //   if (roleInfo.roleType === "")
+      //   model.createdBy = "user";
+      //   break;
       default:
         throw "permission not granted";
     }
@@ -83,28 +88,58 @@ exports.search = async (query, page, user) => {
   // if (query.id) {
   //   where["_id"] = query.id;
   // }
-
   if (query.fullName) {
     where["fullName"] = query.fullName;
   }
   if (user.id) {
     where._id = { $ne: user.id };
   }
-  const count = await db.user.countDocuments(where);
-  // console.log("count: ", count);
+  if (query.createdBy) {
+    where["createdBy"] = query.createdBy;
+  }
+  if (query.roleType) {
+    where["roleId.roleType"] = query.roleType;
+  }
+  if (query.roleId) {
+    where["roleId"] = new ObjectId(query.roleId);
+  }
+
+  const pipeline = [
+    {
+      $lookup: {
+        from: "roles",
+        localField: "roleId",
+        foreignField: "_id",
+        as: "hhhhh",
+      },
+    },
+    {
+      $unwind: {
+        path: "$roleId",
+        preserveNullAndEmptyArrays: true,
+      },
+    },
+  ];
+  let countAggregation = [
+    ...pipeline,
+    { $match: where },
+    { $group: { _id: null, count: { $sum: 1 } } },
+  ];
+  const count = await db.user.aggregate(countAggregation);
+
   let items;
   if (page) {
-    items = await db.user
-      .find(where)
-      .skip(page.skip)
-      .limit(page.limit)
-      .sort({ createdAt: -1 })
-      .populate(populate);
+    pipeline.push(
+      { $match: where },
+      { $sort: { updatedAt: -1 } },
+      { $skip: page.skip },
+      { $limit: page.limit }
+      // { $populate: populate }
+    );
+    items = await db.user.aggregate(pipeline);
   } else {
-    items = db.user
-      .find(where) // { roleId: 0 }
-      .sort({ createdAt: -1 })
-      .populate(populate);
+    pipeline.push({ $match: where }, { $sort: { updatedAt: -1 } });
+    items = await db.user.aggregate(pipeline);
   }
   return {
     count,
@@ -134,9 +169,9 @@ exports.get = async (query) => {
 
 exports.remove = async (id) => {
   try {
-    let entity = await db.user.findById(id)
+    let entity = await db.user.findById(id);
     if (entity) {
-      return await db.user.deleteOne({_id:entity.id});
+      return await db.user.deleteOne({ _id: entity.id });
     }
     return null;
   } catch (error) {

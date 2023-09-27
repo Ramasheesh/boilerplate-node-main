@@ -18,7 +18,8 @@ const getByCondition = async (condition) => {
 
 const populate = [
   {
-    path: "roleId",
+    path: "userId",
+    match: { profileType: { $eq: "driver" } },
   },
 ];
 exports.create = async (model, user) => {
@@ -46,9 +47,9 @@ exports.update = async (id, model) => {
 exports.search = async (query, page) => {
   let where = {};
 
-  if (query.name) {
-    where.name = {
-      $regex: query.name,
+  if (query.profileType) {
+    where.profileType = {
+      $regex: query.profileType,
       $options: "i",
     };
   }
@@ -62,9 +63,9 @@ exports.search = async (query, page) => {
       .sort({ name: 1 })
       .skip(page.skip)
       .limit(page.limit)
-      .populate(populate);
+      // .populate(populate);
   } else {
-    items = await db.profile.find(where).sort({ name: 1 }); //.populate(populate);;
+    items = await db.profile.find(where).sort({ profileType: 1 });//.populate(populate);;
   }
 
   return {

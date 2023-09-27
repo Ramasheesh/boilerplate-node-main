@@ -36,7 +36,8 @@ exports.search = async (req, res) => {
       retVal.items,
       retVal.pageNo,
       retVal.limit,
-      retVal.totalRecords
+      retVal.totalRecords,
+      // retVal.aggregate
     );
   } catch (error) {
     return res.failure(error);

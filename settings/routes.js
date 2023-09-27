@@ -164,7 +164,7 @@ module.exports.configure = (app, endpoints) => {
     {
       action: "GET",
       method: "search",
-      filter: auth.validateToken,
+      // filter: auth.validateToken,
     },
     {
       action: "DELETE",
