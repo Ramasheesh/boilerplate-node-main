@@ -130,11 +130,6 @@ exports.search = async (query, page, user) => {
       },
     },
   ];
-  // let countAggregation = [
-  //   ...pipeline,
-  //   { $match: where },
-  //   { $group: { _id: null, count: { $sum: 1 } } },
-  // ];
   const count = await db.user.countDocuments(where);
 
   let items;
@@ -144,7 +139,6 @@ exports.search = async (query, page, user) => {
       { $sort: { updatedAt: -1 } },
       { $skip: page.skip },
       { $limit: page.limit }
-      // { $populate: populate }
     );
     items = await db.user.aggregate(pipeline);
   } else {

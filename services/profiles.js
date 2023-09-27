@@ -44,36 +44,85 @@ exports.update = async (id, model) => {
   }
 };
 
-exports.search = async (query, page) => {
+exports.search = async (query, page, userId) => {
   let where = {};
+  const { search } = query;
 
-  if (query.profileType) {
-    where.profileType = {
-      $regex: query.profileType,
-      $options: "i",
-    };
+  if (query.search) {
+    where["$or"] = [
+      {
+        name: { $regex: query.search, $options: "i" },
+      },
+      {
+        profileType: { $regex: query.search, $options: "i" },
+      },
+      {
+        zipCode: { $regex: query.search, $options: "i" },
+      },
+    ];
   }
 
-  where.query = query;
-  const count = await db.profile.find(where).count();
+  // if (userId.id) {
+  //   userId._id = { $ne: user.id };
+  // }
+  const pipeline = [
+    {
+      $lookup: {
+        from: "users",
+        let: { localUserId: "$userId" },
+        pipeline: [
+          {
+            $match: {
+              $expr: {
+                $eq: ["$_id", "$$localUserId"],
+              },
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              fullName: 1,
+              firstName: 1,
+              lastName: 1,
+              email: 1,
+            },
+          },
+        ],
+        as: "userId",
+      },
+    },
+    {
+      $unwind: {
+        path: "$userId",
+        preserveNullAndEmptyArrays: true,
+      },
+    },
+  ];
+  const count = await db.profile.countDocuments(where);
+
   let items;
   if (page) {
-    items = await db.profile
-      .find(where)
-      .sort({ name: 1 })
-      .skip(page.skip)
-      .limit(page.limit)
-      // .populate(populate);
+    pipeline.push(
+      { $match: where },
+      { $sort: { updatedAt: -1 } },
+      { $skip: page.skip },
+      { $limit: page.limit }
+    );
+    items = await db.profile.aggregate(pipeline);
   } else {
-    items = await db.profile.find(where).sort({ profileType: 1 });//.populate(populate);;
+    pipeline.push(
+      {
+        $match: where,
+      },
+      { $sort: { updatedAt: -1 } }
+    );
+    items = await db.profile.aggregate(pipeline);
   }
-
   return {
-    count: count,
-    items: items,
+    count,
+    items,
   };
 };
-
 exports.get = async (query) => {
   if (typeof query === "string") {
     // if (query.isObjectId()) {
