@@ -44,10 +44,9 @@ exports.update = async (id, model) => {
   }
 };
 
-exports.search = async (query, page, userId) => {
+exports.search = async (query, page) => {
   let where = {};
   const { search } = query;
-
   if (query.search) {
     where["$or"] = [
       {
@@ -56,15 +55,17 @@ exports.search = async (query, page, userId) => {
       {
         profileType: { $regex: query.search, $options: "i" },
       },
-      {
-        zipCode: { $regex: query.search, $options: "i" },
-      },
     ];
   }
-
-  // if (userId.id) {
-  //   userId._id = { $ne: user.id };
+  // if (user.userId) {
+  //   where._id = { $ne: user.userId };
   // }
+  if (query.profileType) {
+    where["profileType"] = query.profileType;
+  }
+  if (query.name) {
+    where["name"] = query.name;
+  }
   const pipeline = [
     {
       $lookup: {
