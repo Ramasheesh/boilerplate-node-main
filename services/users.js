@@ -85,12 +85,22 @@ exports.update = async (id, model, user) => {
 };
 exports.search = async (query, page, user) => {
   let where = {};
-  // if (query.id) {
-  //   where["_id"] = query.id;
-  // }
-  if (query.fullName) {
-    where["fullName"] = query.fullName;
+  const { search } = query;
+
+  if (query.search) {
+    where["$or"] = [
+      {
+        firstName: { $regex: query.search, $options: "i" },
+      },
+      {
+        lastName: { $regex: query.search, $options: "i" },
+      },
+      {
+        fullName: { $regex: query.search, $options: "i" },
+      },
+    ];
   }
+
   if (user.id) {
     where._id = { $ne: user.id };
   }
@@ -138,7 +148,12 @@ exports.search = async (query, page, user) => {
     );
     items = await db.user.aggregate(pipeline);
   } else {
-    pipeline.push({ $match: where }, { $sort: { updatedAt: -1 } });
+    pipeline.push(
+      {
+        $match: where,
+      },
+      { $sort: { updatedAt: -1 } }
+    );
     items = await db.user.aggregate(pipeline);
   }
   return {
