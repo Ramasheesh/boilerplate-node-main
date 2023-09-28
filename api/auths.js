@@ -13,8 +13,8 @@ exports.signup = async (req, res) => {
   }
   try {
     req.body.hash = await crypto.setPassword(req.body.password);
-    let existUser = await db.user.findOne({email: req.body.email});
-    if(existUser){
+    let existUser = await db.user.findOne({ email: req.body.email });
+    if (existUser) {
       throw "This Email already registered, Please Go for login";
     }
     let user = await authService.register(req.body);
@@ -45,7 +45,7 @@ exports.login = async (req, res) => {
       user.token = await jwtToken.jwtSign({
         id: user.id,
         email: user.email,
-        roleId:user.roleId
+        roleId: user.roleId,
       });
       user.isTokenExpire = false;
       user.otp = null;
@@ -120,9 +120,9 @@ exports.changePassword = async (req, res) => {
 exports.forgotPassword = async (req, res) => {
   try {
     let data = req.body.email;
-    let existUser = await db.user.findOne({email: data});
-    if(existUser){
-      throw "User doesn't Exist"
+    let existUser = await db.user.findOne({ email: data });
+    if (existUser) {
+      throw "User doesn't Exist";
     }
     let user = await db.user.findById(req.params.id);
     let otpCode = utils.randomPin(6);

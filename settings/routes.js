@@ -109,6 +109,13 @@ module.exports.configure = (app, endpoints) => {
       url: "/:id",
       filter: auth.validateToken,
     },
+
+    {
+      action: "POST",
+      method: "switchProfile",
+      url: "/switch",
+      filter: auth.validateToken,
+    },
   ]);
 
   api.model("roles").register([

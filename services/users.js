@@ -193,11 +193,22 @@ exports.remove = async (id) => {
   }
 };
 
-exports.switchUserProfiles = async (model,user ,id)=>{
+exports.switchProfile = async (req, res) => {
   try {
-    let userInfo = await db.user.findById(id)
-    console.log('userInfo: ', userInfo);
+    let userInfo = await db.user.findOne({ _id: req.user.id });
+    if (userInfo && userInfo.currentProfile) {
+      const currentProfileId = new ObjectId(userInfo.currentProfile);
+
+      if (userInfo.profiles[0].equals(currentProfileId)) {
+        userInfo.currentProfile = userInfo.profiles[1];
+      }
+      if (userInfo.profiles[1].equals(currentProfileId)) {
+        userInfo.currentProfile = userInfo.profiles[0];
+      }
+      await userInfo.save();
+    }
+    return userInfo;
   } catch (error) {
-    throw error
+    return error;
   }
-}
+};
