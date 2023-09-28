@@ -6,15 +6,15 @@ const mongoose = require("mongoose");
 const updateEntities = require("../helpers/updateEntities");
 const ObjectId = mongoose.Types.ObjectId;
 
-const populate = [
-  {
-    path: "roleId",
-    // match: { roleType: { $ne: "superAdmin" } },
-    // match: { roleType },
-    // match: {createdBy : {$eq: "admin"}}
-    // match: { select: "-createdBy" },
-  },
-];
+// const populate = [
+//   {
+//     path: "roleId",
+//     // match: { roleType: { $ne: "superAdmin" } },
+//     // match: { roleType },
+//     // match: {createdBy : {$eq: "admin"}}
+//     // match: { select: "-createdBy" },
+//   },
+// ];
 //
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
@@ -123,16 +123,35 @@ exports.search = async (query, page, user) => {
     {
       $lookup: {
         from: "roles",
-        localField: "roleId",
-        foreignField: "_id",
+        // localField: "roleId",
+        // foreignField: "_id",
+        let: { roleId: "$roleId" }, 
+        pipeline: [
+          {
+            $match: {
+              $expr: {
+                $eq: ["$_id", "$$roleId"] 
+              }
+            }
+          },
+          
+        ],
         as: "roleId",
       },
     },
     {
-      $unwind: {
-        path: "$roleId",
-        preserveNullAndEmptyArrays: true,
+      $unwind: "$roleId"
+    },
+    {
+      $lookup: {
+        from: "profiles",
+        localField: "currentProfile",
+        foreignField: "_id",
+        as: "currentProfile",
       },
+    },
+    {
+      $unwind: "$currentProfile"
     },
   ];
   const count = await db.user.countDocuments(where);
