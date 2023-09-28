@@ -13,6 +13,10 @@ exports.signup = async (req, res) => {
   }
   try {
     req.body.hash = await crypto.setPassword(req.body.password);
+    let existUser = await db.user.findOne({email: req.body.email});
+    if(existUser){
+      throw "This Email already registered, Please Go for login";
+    }
     let user = await authService.register(req.body);
     return res.data(mapper.toModel(user));
   } catch (e) {
@@ -115,9 +119,13 @@ exports.changePassword = async (req, res) => {
 
 exports.forgotPassword = async (req, res) => {
   try {
-    let data = req.body;
+    let data = req.body.email;
+    let existUser = await db.user.findOne({email: data});
+    if(existUser){
+      throw "User doesn't Exist"
+    }
     let user = await db.user.findById(req.params.id);
-    let otpCode = await utils.randomPin(6);
+    let otpCode = utils.randomPin(6);
     user.otp = otpCode;
     await user.save();
     return res.data(user);

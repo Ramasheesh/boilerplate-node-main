@@ -37,7 +37,6 @@ exports.search = async (req, res) => {
       retVal.pageNo,
       retVal.limit,
       retVal.totalRecords,
-      // retVal.aggregate
     );
   } catch (error) {
     return res.failure(error);
@@ -61,3 +60,12 @@ exports.delete = async (req, res) => {
     return res.failure(error);
   }
 };
+
+exports.switchUserProfiles = async(req, res)=>{
+  try {
+    let retVal = await base.switchUserProfiles(req);
+    return res.data(retVal);
+  } catch (error) {
+    throw res.failure(error);
+  }
+}

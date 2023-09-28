@@ -20,12 +20,12 @@ module.exports = {
     type: mongoose.Schema.Types.ObjectId,
     ref: "profile",
   },
-  // profiles: [
-    // {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "profile",
-    // },
-  // ],
+  profiles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "profile",
+    },
+  ],
   authType: {
     type: String,
     enum: ["email", "google", "facebook", "apple", "github", "phone"],

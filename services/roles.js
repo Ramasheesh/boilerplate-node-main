@@ -23,7 +23,10 @@ const populate = [
 ];
 exports.create = async (model ) => {
   try {
-
+    let existRole = await  db.role.findOne({email: model.email});
+    if(existRole){
+      throw " This Email ID already Exist";
+    }
     let entity = new db.role(await mapper.newEntity(model));
     return await entity.save();
   } catch (error) {

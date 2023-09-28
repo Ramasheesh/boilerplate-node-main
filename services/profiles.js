@@ -24,11 +24,34 @@ const populate = [
 ];
 exports.create = async (model, user) => {
   try {
-    let entity = new db.profile(await mapper.newEntity(model));
-    if (entity) {
-      entity.userId = user.id;
+    let userInfo = await db.user.findById(user.id);
+
+
+    if (userInfo && userInfo.profiles.length === 0) {
+      let entity = new db.profile(await mapper.newEntity(model));
+      entity.userId = userInfo.id;
+      userInfo.currentProfile = new ObjectId(entity.id);
+      userInfo.profiles.push(new ObjectId(entity.id));
+      await userInfo.save();
+      return await entity.save();
+    } 
+    
+
+    else if (userInfo && userInfo.profiles.length === 1) {
+      let existedProfile = await db.profile.findById(userInfo.profiles[0]);
+      if (existedProfile.profileType === model.profileType) {
+        throw "this profiles type already existed";
+      }
+      let entity = new db.profile(await mapper.newEntity(model));
+      entity.userId = userInfo.id;
+      userInfo.profiles.push(new ObjectId(entity.id));
+      userInfo.save();
+      return await entity.save();
+    } 
+    else {
+      throw "you already have two profiles";
     }
-    return await entity.save();
+  
   } catch (error) {
     throw error;
   }
@@ -138,13 +161,13 @@ exports.get = async (query) => {
       name: query.name,
     });
   }
-  
+
   return null;
 };
 
 exports.remove = async (id) => {
   try {
-    let entity = await db.profile.findById(id );
+    let entity = await db.profile.findById(id);
     if (entity) {
       return await db.profile.deleteOne({ _id: entity.id });
     }

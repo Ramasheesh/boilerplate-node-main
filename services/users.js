@@ -28,6 +28,7 @@ const getByCondition = async (condition) => {
   return await db.user.findOne(condition).populate(populate);
 };
 
+// this user created by role
 exports.create = async (model, user) => {
   try {
     let roleInfo = await db.role.findById(model.roleId);
@@ -66,16 +67,20 @@ exports.create = async (model, user) => {
       default:
         throw "permission not granted";
     }
-    let entity = new db.user(await mapper.newEntity(model));
+    let existUser = await db.user.findOne({email: model.user})
+    if(existUser){
+        throw "User Already exist Enter other Email"
+    }
+    let entity = new db.user.create(await mapper.newEntity(model));
     return await entity.save();
   } catch (error) {
     throw error;
   }
 };
 
-exports.update = async (id, model, user) => {
+exports.update = async (id, model) => {
   try {
-    let roleInfo = await db.role.findById(model.roleId);
+    // let roleInfo = await db.role.findById(model.roleId);
     let entity = await db.user.findById(id).populate(populate);
     set(model, entity);
     return entity.save();
@@ -187,3 +192,12 @@ exports.remove = async (id) => {
     throw error;
   }
 };
+
+exports.switchUserProfiles = async (model,user ,id)=>{
+  try {
+    let userInfo = await db.user.findById(id)
+    console.log('userInfo: ', userInfo);
+  } catch (error) {
+    throw error
+  }
+}
