@@ -5,17 +5,6 @@ const moment = require("moment");
 const mongoose = require("mongoose");
 const updateEntities = require("../helpers/updateEntities");
 const ObjectId = mongoose.Types.ObjectId;
-
-// const populate = [
-//   {
-//     path: "roleId",
-//     // match: { roleType: { $ne: "superAdmin" } },
-//     // match: { roleType },
-//     // match: {createdBy : {$eq: "admin"}}
-//     // match: { select: "-createdBy" },
-//   },
-// ];
-//
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
 };
@@ -153,6 +142,15 @@ exports.search = async (query, page, user) => {
     {
       $unwind: "$currentProfile"
     },
+    {
+      $lookup: {
+        from: "profiles",
+        localField: "profiles",
+        foreignField: "_id",
+        as: "profiles",
+      },
+    }
+    
   ];
   const count = await db.user.countDocuments(where);
 
