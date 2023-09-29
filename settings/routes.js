@@ -116,6 +116,13 @@ module.exports.configure = (app, endpoints) => {
       url: "/switch",
       filter: auth.validateToken,
     },
+    // {
+    //   action: "GET",
+    //   method: "getListing",
+    //   url: "/get/List",
+    //   filter: auth.validateToken,
+    // },
+    
   ]);
 
   api.model("roles").register([
@@ -128,7 +135,6 @@ module.exports.configure = (app, endpoints) => {
       action: "PUT",
       method: "update",
       url: "/:id",
-      // filter: auth.authorize('admin', 'update')
       filter: auth.validateToken,
     },
     {
@@ -149,7 +155,6 @@ module.exports.configure = (app, endpoints) => {
       filter: auth.validateToken,
     },
   ]);
-
   api.model("profiles").register([
     {
       action: "POST",
@@ -180,4 +185,36 @@ module.exports.configure = (app, endpoints) => {
       filter: auth.validateToken,
     },
   ]);
+  api.model("bookmarks").register([
+    {
+      action: "POST",
+      method: "create",
+      url: "/book/mark",
+      filter: auth.validateToken,
+    },
+    {
+      action: "PUT",
+      method: "update",
+      url: "/:id",
+      filter: auth.validateToken,
+    },
+    {
+      action: "GET",
+      method: "get",
+      url: "/:id",
+      filter: auth.validateToken,
+    },
+    {
+      action: "GET",
+      method: "search",
+      filter: auth.validateToken,
+    },
+    {
+      action: "DELETE",
+      method: "delete",
+      url: "/:id",
+      filter: auth.validateToken,
+    },
+  ]);
 };
+

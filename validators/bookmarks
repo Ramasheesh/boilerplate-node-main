@@ -1,0 +1,17 @@
+'use strict';
+
+exports.canCreate = (req) => {
+  let data = {
+    isSuccess: false,
+  };
+  if (!req.body.status) {
+    data.message = "Status is required";
+    return data;
+  }
+  if (!req.body.bookMarkToId) {
+    data.message = "BookMark To Id is required";
+    return data;
+  }
+  data.isSuccess = true;
+  return data;
+};

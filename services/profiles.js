@@ -4,6 +4,12 @@ const updateEntities = require("../helpers/updateEntities");
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
 
+const populate = [
+  {
+    path: "userId",
+    match: { profileType: { $eq: "driver" } },
+  },
+];
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
 };
@@ -16,12 +22,6 @@ const getByCondition = async (condition) => {
   return await db.profile.findOne(condition);
 };
 
-const populate = [
-  {
-    path: "userId",
-    match: { profileType: { $eq: "driver" } },
-  },
-];
 exports.create = async (model, user) => {
   try {
     let userInfo = await db.user.findById(user.id);

@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
 module.exports = {
-  fullName: String,
-  firstName: String,
-  lastName: String,
+  fullName:{type: String},
+  firstName: {type: String},
+  lastName: {type: String},
   // created by role
   createdBy: {
     type: String,
-    enum: ["", "admin", "superAdmin", "manager"],
-    default: "",
+    enum: ["self", "admin", "superAdmin", "manager"],
+    default: "self",
   },
   // role id
   roleId: {
@@ -36,11 +36,12 @@ module.exports = {
     enum: ["pending", "active", "inactive", "deleted", "blocked"],
     default: "pending",
   },
-  email: String,
-  password: String,
+  email:{type: String},
+  password: {type: String},
   isEmailVerified: { type: Boolean, default: false },
   isTokenExpire: { type: Boolean, default: false },
-  token: String,
-  otp: String,
+  token: {type: String},
+  otp: {type: String},
   lastLogin: Date,
+  
 };

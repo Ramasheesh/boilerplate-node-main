@@ -1,6 +1,7 @@
 const base = require("./api-base")("users", "user");
 const check = require("../validators/users");
 const userServices = require('../services/users')
+
 exports.create = async (req, res) => {
   try {
     // console.log("h");
@@ -73,3 +74,5 @@ exports.switchProfile = async(req,res)=>{
     return res.failure(error)
   }
 }
+
+

@@ -97,7 +97,7 @@ exports.validateToken = async (req, res, next) => {
     //     console.log(decoded);
     //     req.user = decoded;
     // let accessToken  = "";
-    const decodeData = await jwtHelper.verifyToken(token);
+    const decodeData = jwtHelper.verifyToken(token);
     if (!decodeData) throw "invalid token ";
     const userData = await db.user.findById(decodeData.id).populate({path:'roleId'});
     req.user = userData;

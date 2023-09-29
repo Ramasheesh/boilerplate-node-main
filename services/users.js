@@ -4,7 +4,19 @@ const _ = require("underscore");
 const moment = require("moment");
 const mongoose = require("mongoose");
 const updateEntities = require("../helpers/updateEntities");
+const { profile } = require("winston");
 const ObjectId = mongoose.Types.ObjectId;
+
+const populate = [
+  {
+    path: "roleId",
+    // match: { roleType: { $ne: "superAdmin" } },
+    // match: { roleType },
+    // match: {createdBy : {$eq: "admin"}}
+    // match: { select: "-createdBy" },
+  },
+];
+
 const set = (model, entity) => {
   return updateEntities.update(model, entity);
 };
@@ -56,9 +68,9 @@ exports.create = async (model, user) => {
       default:
         throw "permission not granted";
     }
-    let existUser = await db.user.findOne({email: model.user})
-    if(existUser){
-        throw "User Already exist Enter other Email"
+    let existUser = await db.user.findOne({ email: model.user });
+    if (existUser) {
+      throw "User Already exist Enter other Email";
     }
     let entity = new db.user.create(await mapper.newEntity(model));
     return await entity.save();
@@ -107,6 +119,9 @@ exports.search = async (query, page, user) => {
   if (query.roleId) {
     where["roleId"] = new ObjectId(query.roleId);
   }
+  if (query.profileType === query.profileType) {
+    where["profiles.profileType"] = query.profileType;
+  }
 
   const pipeline = [
     {
@@ -114,22 +129,21 @@ exports.search = async (query, page, user) => {
         from: "roles",
         // localField: "roleId",
         // foreignField: "_id",
-        let: { roleId: "$roleId" }, 
+        let: { roleId: "$roleId" },
         pipeline: [
           {
             $match: {
               $expr: {
-                $eq: ["$_id", "$$roleId"] 
-              }
-            }
+                $eq: ["$_id", "$$roleId"],
+              },
+            },
           },
-          
         ],
         as: "roleId",
       },
     },
     {
-      $unwind: "$roleId"
+      $unwind: "$roleId",
     },
     {
       $lookup: {
@@ -140,7 +154,7 @@ exports.search = async (query, page, user) => {
       },
     },
     {
-      $unwind: "$currentProfile"
+      $unwind: "$currentProfile",
     },
     {
       $lookup: {
@@ -149,8 +163,7 @@ exports.search = async (query, page, user) => {
         foreignField: "_id",
         as: "profiles",
       },
-    }
-    
+    },
   ];
   const count = await db.user.countDocuments(where);
 
@@ -226,6 +239,6 @@ exports.switchProfile = async (req, res) => {
     }
     return userInfo;
   } catch (error) {
-    return error;
+    throw error;
   }
 };

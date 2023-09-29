@@ -10,8 +10,8 @@
     "auth": {
         "secret": "hhhhhhhhhhsgaaaaaaaaax",
         "refreshSecret": "UHVJhbjhbvfeHbbJKcndKJbBKkbkjbBKBbkb",
-        "tokenPeriod": "365d",
-        "refreshPeriod": "365d"
+        "tokenPeriod": "15h",
+        "refreshPeriod": "15h"
     },
     "logger": {
         "console": {
