@@ -2,7 +2,7 @@ const base = require("./api-base")("roles", "role"); // role of services and rol
 const check = require("../validators/roles");
 exports.create = async (req, res) => {
   try {
-    let validate = await check.canCreate(req);
+    let validate = check.canCreate(req);
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }
@@ -15,7 +15,7 @@ exports.create = async (req, res) => {
 
 exports.update = async (req, res) => {
   try {
-    let validate = await check.canUpdate(req);
+    let validate = check.canUpdate(req);
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }

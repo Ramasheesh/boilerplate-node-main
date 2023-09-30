@@ -15,7 +15,7 @@ exports.signup = async (req, res) => {
     req.body.hash = await crypto.setPassword(req.body.password);
     let existUser = await db.user.findOne({ email: req.body.email });
     if (existUser) {
-      throw "This Email already registered, Please Go for login";
+      throw process.lang.DUPLICATE_EMAIL;
     }
     let user = await authService.register(req.body);
     return res.data(mapper.toModel(user));
@@ -32,17 +32,17 @@ exports.login = async (req, res) => {
     }
     let user = await db.user.findOne({ email: req.body.email });
     if (!user) {
-      throw "user not found";
+      throw process.lang.EMAIL_INVALID;
     }
     const passwordIsValid = await crypto.comparePassword(
       req.body.password,
       user.password
     );
     if (!passwordIsValid) {
-      return res.failure("Invalid password");
+      return res.failure(process.lang.INVALID_PASSWORD);
     } else {
       // generate token and save token in user
-      user.token = await jwtToken.jwtSign({
+      user.token = jwtToken.jwtSign({
         id: user.id,
         email: user.email,
         roleId: user.roleId,
@@ -53,20 +53,20 @@ exports.login = async (req, res) => {
       return res.data(user);
     }
   } catch (error) {
-    console.error("Login error:", error);
-    return res.failure("An error occurred during login");
+    // console.error("Login error:", error);
+    return res.failure(process.lang.LOGIN_ERROR);
   }
 };
 
 exports.logout = async (req, res) => {
   try {
-    let userInfo = await db.user.findById(req.params.id, { token: 1 });
+    let userInfo = await db.user.findById(req.user.id, { token: 1 });
     if (userInfo) {
       userInfo.token = null;
     }
 
     await userInfo.save();
-    return res.data(userInfo, { message: "user logout successfully" });
+    return res.data(userInfo = null, process.lang.LOGOUT);
   } catch (error) {
     return res.failure(error);
   }
@@ -79,27 +79,27 @@ exports.setPassword = async (req, res) => {
       return res.failure(validate.message);
     }
     let { oldPassword, newPassword, confirmPassword } = req.body;
-    let findUser = await db.user.findById(req.params.id);
+    let findUser = await db.user.findById(req.user.id);
     let match = await crypto.comparePassword(
-      req.body.oldPassword,
+      oldPassword,
       findUser.password
     );
     if (!match) {
-      throw "old password not match";
+      throw process.lang.OLD_PASS_NOT_MATCH;
     }
     if (!(newPassword === confirmPassword)) {
-      throw "confirm password not match";
+      throw process.lang.CONFIRM_PASS_NOT_MATCH;
     }
     findUser.password = await crypto.setPassword(newPassword);
     await findUser.save();
-    return res.data("password updated successfully");
+    return res.data(process.lang.PASSWORD_CHANGE_SUCCESS);
   } catch (error) {
     return res.failure(error);
   }
 };
 exports.changePassword = async (req, res) => {
   try {
-    const validate = await check.canResetPassword(req);
+    const validate = check.canResetPassword(req);
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }
@@ -107,11 +107,11 @@ exports.changePassword = async (req, res) => {
     let newPassword = req.body.newPassword;
     let confirmNewPassword = req.body.confirmNewPassword;
     if (!(newPassword === confirmNewPassword)) {
-      throw "confirm password not match";
+      throw process.lang.CONFIRM_PASS_NOT_MATCH;
     }
     findUser.password = await crypto.setPassword(newPassword);
     await findUser.save();
-    return res.data("password updated successfully");
+    return res.data(process.lang.PASSWORD_CHANGE_SUCCESS);
   } catch (error) {
     return res.failure(error);
   }
@@ -122,7 +122,7 @@ exports.forgotPassword = async (req, res) => {
     let data = req.body.email;
     let existUser = await db.user.findOne({ email: data });
     if (existUser) {
-      throw "User doesn't Exist";
+      throw process.lang.USER_NOT_FOUND;
     }
     let user = await db.user.findById(req.params.id);
     let otpCode = utils.randomPin(6);

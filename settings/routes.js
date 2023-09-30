@@ -57,13 +57,13 @@ module.exports.configure = (app, endpoints) => {
     {
       action: "POST",
       method: "logout",
-      url: "/logout/:id",
+      url: "/logout",
       filter: auth.validateToken,
     },
     {
       action: "POST",
       method: "setPassword",
-      url: "/setPassword/:id",
+      url: "/setPassword",
       filter: auth.validateToken,
     },
     {
