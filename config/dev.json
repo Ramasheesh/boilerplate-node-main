@@ -2,7 +2,7 @@
     "env": "dev",
     "mongodb": {
         "database": "bcoder",
-        "host": "mongodb+srv://test:test123@cluster0.mgh04bb.mongodb.net/"
+        "host": "mongodb://127.0.0.1:27017/LocalData"
     },
     "webServer": {
         "port": 5001

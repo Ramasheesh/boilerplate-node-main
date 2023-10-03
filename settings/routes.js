@@ -5,7 +5,7 @@ const path = require("path");
 
 module.exports.configure = (app, endpoints) => {
   app
-    .get("/", (req, res) => {
+    .get("/",(req, res) => {
       return res.send("The Gifting Application Server");
     })
     .descriptor({
@@ -13,7 +13,7 @@ module.exports.configure = (app, endpoints) => {
     });
 
   app
-    .get("/api", (req, res) => {
+    .get("/api",(req, res) => {
       return res.send("The Gifting Application Server");
     })
     .descriptor({
@@ -182,6 +182,13 @@ module.exports.configure = (app, endpoints) => {
       action: "DELETE",
       method: "delete",
       url: "/:id",
+      filter: auth.validateToken,
+    },
+    {
+      action: "POST",
+      method: `upload`,//.singleUpload.single("file")`,
+      url: "/:id",
+      // filter: upload.filUpload('file'),
       filter: auth.validateToken,
     },
   ]);

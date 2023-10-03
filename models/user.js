@@ -43,6 +43,7 @@ module.exports = {
   ], 
   email:{type: String},
   password: {type: String},
+  profileImageUrl: {type: String},
   isEmailVerified: { type: Boolean, default: false },
   isTokenExpire: { type: Boolean, default: false },
   token: {type: String},

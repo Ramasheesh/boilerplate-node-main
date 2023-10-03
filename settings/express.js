@@ -7,6 +7,8 @@ const cors = require('cors');
 const config = require('config');
 const morgan = require('../helpers/morgan');
 const endpoints = require('express-list-endpoints-descriptor')(express);
+var multer  = require('multer')
+const upload = multer({ dest: 'public/' })
 
 const app = express();
 
@@ -40,6 +42,8 @@ app.use(express.json({limit: '50mb'}));
 
 // parse urlencoded request body
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
+// new add
+app.use('/', express("./public"));
 
 // sanitize request data
 app.use(xss());

@@ -3,6 +3,7 @@ const mapper = require("../mappers/profile");
 const updateEntities = require("../helpers/updateEntities");
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
+let  upload = require('../services/uploadImage');
 
 const populate = [
   {
@@ -176,7 +177,17 @@ exports.remove = async (id) => {
     throw error;
   }
 };
-
-exports.uploadProfile = async()=>{
-  
+exports.upload = async(req,res,id)=>{
+  try {
+    const data = req.file 
+    // let  url = req.protocol + "://" + req.get("host") + "/images/"+ `${data.filename}`
+    let  url =`http://localhost:2020/images/${data+"filename"}`
+    console.log('data: ', url);
+    let user = await db.profile.findById(id, {profileImage: 1})
+    user.profileImage = url;
+    await user.save()
+    return user
+   } catch (error) {
+    throw error
+   }
 }

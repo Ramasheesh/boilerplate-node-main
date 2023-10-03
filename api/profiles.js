@@ -1,5 +1,8 @@
 const base = require("./api-base")("profiles", "profile"); // role of services and role of mapper
 const check = require("../validators/users");
+const servicesUpload = require('../services/profiles')
+let  upload = require('../services/uploadImage');
+
 exports.create = async (req, res) => {
   try {
     let validate = await check.canCreateProfile(req);
@@ -53,6 +56,14 @@ exports.get = async (req, res) => {
 exports.delete = async (req, res) => {
   try {
     let retVal = await base.delete(req);
+    return res.success(retVal);
+  } catch (error) {
+    res.failure(error);
+  }
+};
+exports.upload = async (req, res) => {
+  try {
+    let retVal = await servicesUpload.upload(req);
     return res.success(retVal);
   } catch (error) {
     res.failure(error);

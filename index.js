@@ -2,7 +2,7 @@ require("dotenv").config();
 const { app, endpoints } = require("./settings/express");
 const logger = require("./helpers/logger")();
 const webServer = require("config").get("webServer");
-let constant = require('./helpers/message');
+const constant = require('./helpers/message');
 
 
 app.use(function (req, res, next) {

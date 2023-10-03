@@ -113,6 +113,12 @@ module.exports = function (directoryPath, app) {
             });
             tasks.splice(1, filters.length + 1);
             break;
+            // case 'POST':
+            // app.upload(apiUrl, tasks).descriptor({
+            //   name: permissionName,
+            // });
+            // tasks.splice(1, filters.length + 1);
+            // break;
 
           default:
             break;
