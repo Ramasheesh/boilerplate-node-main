@@ -17,7 +17,8 @@ exports.toModel = (entity) => {
     createdBy: entity.createdBy,
     otp: entity.otp,
     currentProfile: entity.currentProfile,
-    profiles: entity.profiles
+    profiles: entity.profiles,
+  bookmarks: entity.bookmarks
   };
   return model;
 };
@@ -49,6 +50,7 @@ exports.newEntity = async (body, createdByAdmin = true) => {
     otp: body.otp,
     currentProfile: body.currentProfile,
     profiles: body.profiles,
+  bookmarks: body.bookmarks
   };
   if (body.password) {
     model.password = await crypto.setPassword(body.password);

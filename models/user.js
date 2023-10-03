@@ -36,6 +36,11 @@ module.exports = {
     enum: ["pending", "active", "inactive", "deleted", "blocked"],
     default: "pending",
   },
+  bookmarks:[
+    {bookMarkById : {type : mongoose.Types.ObjectId , ref: "user" }},
+    { bookMarkToId : {type: mongoose.Types.ObjectId , ref: "user"}},
+    {status: {type: String , enum: ["active" , "inActive","pending"],default: "pending"}},
+  ], 
   email:{type: String},
   password: {type: String},
   isEmailVerified: { type: Boolean, default: false },

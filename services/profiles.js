@@ -176,3 +176,7 @@ exports.remove = async (id) => {
     throw error;
   }
 };
+
+exports.uploadProfile = async()=>{
+  
+}
