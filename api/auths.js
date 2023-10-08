@@ -5,6 +5,7 @@ const authService = require("../services/auth");
 const mapper = require("../mappers/user");
 const check = require("../validators/auth");
 const utils = require("../helpers/utils");
+const sendMail = require('../helpers/nodemailer');
 
 exports.signup = async (req, res) => {
   let validate = await check.canRegister(req);
@@ -12,13 +13,8 @@ exports.signup = async (req, res) => {
     return res.failure(validate.message);
   }
   try {
-    req.body.hash = await crypto.setPassword(req.body.password);
-    let existUser = await db.user.findOne({ email: req.body.email });
-    if (existUser) {
-      throw process.lang.DUPLICATE_EMAIL;
-    }
     let user = await authService.register(req.body);
-    return res.data(mapper.toModel(user));
+    return res.data(user);
   } catch (e) {
     return res.failure(e);
   }
