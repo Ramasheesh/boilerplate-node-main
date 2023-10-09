@@ -95,6 +95,22 @@ exports.changePassword = async (req, res) => {
     throw error;
   }
 };
+
+
+exports.forgotPassword= async(req,res)=>{
+  try {
+    let user = await db.user.findOne({ email: req.body.email });
+    if (!user) {
+      throw process.lang.USER_NOT_FOUND;
+    }
+    let otpCode = utils.randomPin(6);
+    user.otp = otpCode;
+    await sendOtpEmail(user.email,user.fullName, user.otpCode);
+    await user.save();
+  } catch (error) {
+    throw error
+  }
+}
 // module.exports= {
 //   login
 // }

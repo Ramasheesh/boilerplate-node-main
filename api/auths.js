@@ -65,7 +65,7 @@ exports.changePassword = async (req, res) => {
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }
-    let user = await authService.changePassword(req.params.id);
+    let user = await authService.changePassword(req);
     return res.data(user ,process.lang.PASSWORD_CHANGE_SUCCESS);
   } catch (error) {
     return res.failure(error);
@@ -74,14 +74,11 @@ exports.changePassword = async (req, res) => {
 
 exports.forgotPassword = async (req, res) => {
   try {
-    let user = await db.user.findOne({ email: req.body.email });
-    if (!user) {
-      throw process.lang.USER_NOT_FOUND;
+    const validate = check.canForgotPassword(req);
+    if(!validate.isSuccess){
+      return res.failure(validate.message);
     }
-    let otpCode = utils.randomPin(6);
-    user.otp = otpCode;
-    // await sendOtpEmail(entity.email,entity.fullName, entity.otpCode);
-    await user.save();
+    let user = await authService.forgotPassword(req);
     return res.data(user);
   } catch (error) {
     return res.failure(error);

@@ -135,7 +135,7 @@ exports.canResetPassword = (req) => {
   data.isSuccess = true;
   return data;
 };
-exports.forgotPassword = (req) => {
+exports.canForgotPassword = (req) => {
   let data = {
        isSuccess: false,
   };
