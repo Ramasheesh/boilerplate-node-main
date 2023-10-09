@@ -103,8 +103,12 @@ exports.canSetPassword = (req) => {
        data.message = 'newPassword is required';
        return data;
   };
-  if (!req.body.confirmPassword) {
-       data.message = 'confirmPassword is required';
+  if (!req.body.oldPassword) {
+    data.message = 'old Password is required';
+    return data;
+};
+  if (!req.body.confirmNewPassword) {
+       data.message = 'confirmNewPassword is required';
        return data;
   }
 
@@ -115,14 +119,14 @@ exports.canResetPassword = (req) => {
   let data = {
        isSuccess: false,
   };
-  if (!req.body.oldPassword) {
-       data.message = 'old Password is required';
-       return data;
-  };
   if (!req.body.newPassword) {
        data.message = 'newPassword is required';
        return data;
   };
+  if (!req.body.otp) {
+    data.message = 'newPassword is required';
+    return data;
+};
   if (!req.body.confirmNewPassword) {
        data.message = 'confirmNewPassword is required';
        return data;
@@ -131,3 +135,14 @@ exports.canResetPassword = (req) => {
   data.isSuccess = true;
   return data;
 };
+exports.forgotPassword = (req) => {
+  let data = {
+       isSuccess: false,
+  };
+  if (!req.body.email) {
+    data.message = 'Email is required';
+    return data;
+  };
+  data.isSuccess = true;
+  return data;
+}; 

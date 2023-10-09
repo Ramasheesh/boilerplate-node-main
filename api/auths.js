@@ -26,31 +26,11 @@ exports.login = async (req, res) => {
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }
-    let user = await db.user.findOne({ email: req.body.email });
-    if (!user) {
-      throw process.lang.EMAIL_INVALID;
-    }
-    const passwordIsValid = await crypto.comparePassword(
-      req.body.password,
-      user.password
-    );
-    if (!passwordIsValid) {
-      return res.failure(process.lang.INVALID_PASSWORD);
-    } else {
-      // generate token and save token in user
-      user.token = jwtToken.jwtSign({
-        id: user.id,
-        email: user.email,
-        roleId: user.roleId,
-      });
-      user.isTokenExpire = false;
-      user.otp = null;
-      await user.save();
-      return res.data(user);
-    }
+    let user = await authService.login(req.body)
+    return res.data(user);
   } catch (error) {
     // console.error("Login error:", error);
-    return res.failure(process.lang.LOGIN_ERROR);
+    return res.failure(error);
   }
 };
 
@@ -60,7 +40,6 @@ exports.logout = async (req, res) => {
     if (userInfo) {
       userInfo.token = null;
     }
-
     await userInfo.save();
     return res.data(userInfo = null, process.lang.LOGOUT);
   } catch (error) {
@@ -70,25 +49,12 @@ exports.logout = async (req, res) => {
 
 exports.setPassword = async (req, res) => {
   try {
-    const validate = await check.canSetPassword(req);
+    const validate = check.canSetPassword(req);
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }
-    let { oldPassword, newPassword, confirmPassword } = req.body;
-    let findUser = await db.user.findById(req.user.id);
-    let match = await crypto.comparePassword(
-      oldPassword,
-      findUser.password
-    );
-    if (!match) {
-      throw process.lang.OLD_PASS_NOT_MATCH;
-    }
-    if (!(newPassword === confirmPassword)) {
-      throw process.lang.CONFIRM_PASS_NOT_MATCH;
-    }
-    findUser.password = await crypto.setPassword(newPassword);
-    await findUser.save();
-    return res.data(process.lang.PASSWORD_CHANGE_SUCCESS);
+    let user = await authService.setPassword(req)
+    return res.data(user, process.lang.PASSWORD_SET_SUCCESS);
   } catch (error) {
     return res.failure(error);
   }
@@ -99,15 +65,8 @@ exports.changePassword = async (req, res) => {
     if (!validate.isSuccess) {
       return res.failure(validate.message);
     }
-    let findUser = await db.user.findById(req.params.id);
-    let newPassword = req.body.newPassword;
-    let confirmNewPassword = req.body.confirmNewPassword;
-    if (!(newPassword === confirmNewPassword)) {
-      throw process.lang.CONFIRM_PASS_NOT_MATCH;
-    }
-    findUser.password = await crypto.setPassword(newPassword);
-    await findUser.save();
-    return res.data(process.lang.PASSWORD_CHANGE_SUCCESS);
+    let user = await authService.changePassword(req.params.id);
+    return res.data(user ,process.lang.PASSWORD_CHANGE_SUCCESS);
   } catch (error) {
     return res.failure(error);
   }
@@ -115,14 +74,13 @@ exports.changePassword = async (req, res) => {
 
 exports.forgotPassword = async (req, res) => {
   try {
-    let data = req.body.email;
-    let existUser = await db.user.findOne({ email: data });
-    if (existUser) {
+    let user = await db.user.findOne({ email: req.body.email });
+    if (!user) {
       throw process.lang.USER_NOT_FOUND;
     }
-    let user = await db.user.findById(req.params.id);
     let otpCode = utils.randomPin(6);
     user.otp = otpCode;
+    // await sendOtpEmail(entity.email,entity.fullName, entity.otpCode);
     await user.save();
     return res.data(user);
   } catch (error) {

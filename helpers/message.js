@@ -34,6 +34,7 @@ const MESSAGES={
     UPDATED_SUCCESSFULLY : 'Update successfully',
     PASSWORD_REQUIRED : 'Password is required',
     PASSWORD_CHANGE_SUCCESS:"Password change successfully",
+    PASSWORD_SET_SUCCESS:"Password Set successfully",
     CREATE_SUCCESSFULLY : 'Create successfully',
     NOTIFICATION_CLEAR : ' Notification Clear',
     SEND_SUCCESSFULLY : 'Send successfully',

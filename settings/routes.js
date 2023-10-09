@@ -75,7 +75,7 @@ module.exports.configure = (app, endpoints) => {
     {
       action: "POST",
       method: "forgotPassword",
-      url: "/forgotPassword/:id",
+      url: "/forgotPassword",
     },
     
   ]);
