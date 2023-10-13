@@ -7,8 +7,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: process.env.USER_EMAIL,
-        pass: process.env.USER_PASS
+        user: process.env.EMAIL,
+        pass: process.env.PASS
     },
     tls: {
         rejectUnauthorized: true
@@ -31,3 +31,38 @@ const sendEmail = async (to, subject, message) => {//*****
 
 
 module.exports ={sendEmail}
+
+
+const API_KEY ="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"
+// SMTP serversmtp-relay.sendinblue.com
+// Port  :587
+// Login :oliverschweizer@tromdigital.com
+// Password :d09DcpvAzkIUMP2Q
+var SibApiV3Sdk = require('sib-api-v3-sdk');
+var defaultClient = SibApiV3Sdk.ApiClient.instance;
+// Configure API key authorization: api-key
+var apiKey = defaultClient.authentications['api-key'];
+apiKey.apiKey = API_KEY;
+// Uncomment below two lines to configure authorization using: partner-key
+// var partnerKey = defaultClient.authentications['partner-key'];
+// partnerKey.apiKey = 'YOUR API KEY';
+var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+var sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail(); // SendSmtpEmail | Values to send a transactional email
+sendSmtpEmail = {
+	to: [{
+		email: 'testmail@example.com',
+		name: 'John Doe'
+	}],
+	templateId: 59,
+	params: {
+		name: 'John',
+		surname: 'Doe'
+	},
+	headers: {
+		'X-Mailin-custom': 'custom_header_1:custom_value_1|custom_header_2:custom_value_2'
+	}
+};
+apiInstance.sendTransacEmail(sendSmtpEmail).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);})

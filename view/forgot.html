@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      margin: 0;
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    .email-templet {
+      font-family: 'poppins';
+    }
+
+    /* 
+    .grid-box {
+      box-shadow: 0 0 6px #272d3b2e;
+    } */
+    /* 
+    .box-shadow {
+      box-shadow: 0 0 6px #272d3b2e;
+    } */
+
+    .title-templet {
+      padding: 10px 15px;
+    }
+
+    .title-templet p {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .templet {
+      max-width: 560px;
+      width: 100%;
+      /* padding: 0 15px; */
+      /* box-shadow: 0 0 6px #272d3b2e; */
+      margin: 0 auto;
+    }
+
+    .top-hero-title {
+      background-color: #FCE0E3;
+      padding: 15px 15px 40px;
+    }
+
+    .hero-title {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+
+    .logo-img-beauty img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+
+    /* .hero-title-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+  } */
+    .hero-title-content>span {
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .hero-title-content>p {
+      font-size: 11px;
+    }
+
+    .templet-para {
+      text-align: center;
+    }
+
+    .templet-para p {
+      font-size: 12px;
+      color: #61373F;
+      font-weight: 500;
+    }
+
+    .user-name p {
+      color: #5C656C;
+      font-weight: 500;
+    }
+
+    .verify-title h1 {
+      color: #323232;
+      font-size: 20px;
+      padding-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .user-name {
+      padding: 25px;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .Verify-sec {
+      display: flex;
+      align-items: center;
+      padding: 20px 15px 30px;
+      column-gap: 8px;
+      background-image: linear-gradient(100deg, #FCE0E3, #ffff 75%);
+      margin-left: 50px;
+    }
+
+    .verify-title p {
+      padding-bottom: 35px;
+    }
+
+    .verify-sec-content {
+      gap: 35px;
+      width: 70%;
+    }
+
+    .verify-mail-img {
+      width: 30%;
+    }
+
+    .verify-mail-img img {
+      width: 100%;
+    }
+
+    .verify-sec-content p {
+      font-size: 12px;
+      color: #5C656C;
+      font-weight: 400;
+    }
+
+    .store-app {
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    .store-app p {
+      font-size: 12px;
+      color: #5C656C;
+      font-weight: 400;
+    }
+
+    .store-app span {
+      font-size: 14px;
+      color: #5C656C;
+      font-weight: 500;
+    }
+
+    .platform-store {
+      text-align: center;
+      padding-bottom: 20px;
+      padding-top: 10px;
+    }
+
+    .platform-store img {
+      width: 22%;
+    }
+
+    .code-text span {
+      font-size: 20px;
+      letter-spacing: 10px;
+      border: 1px solid #61373F;
+      padding: 2px 8px;
+      border-radius: 7px;
+      color: #61373F;
+      font-weight: 600;
+    }
+
+    .code-text {
+      padding: 15px 0;
+    }
+
+    .footer-templet {
+      padding: 25px;
+      background-color: #FCE0E3;
+      text-align: center;
+    }
+
+    .footer-templet p {
+      font-size: 12px;
+      color: #5C656C;
+      font-weight: 400;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class='email-templet' style="font-family: Poppins;">
+    <div class="templet" style="box-shadow: 0 0 6px #272d3b2e;">
+      <div class="grid-box" style="box-shadow: 0 0 6px #272d3b2e;">
+        <div class="title-templet">
+          <p>Verify Email1</p>
+        </div>
+        <div class="top-hero-title">
+          <div class="hero-title">
+            <div class="logo-img-beauty">
+              <img
+                src="https://bcoder-dev-bucket.s3.ap-south-1.amazonaws.com/ship-district/fc4b2f97de28962317ff0b8db60e966a9bed0730.png"
+                alt="logo-img-beauty" />
+            </div>
+            <div class="hero-title-content">
+              <span>Beauty Spot</span>
+              <p>to me</p>
+            </div>
+          </div>
+          <div class="templet-para">
+            <p>Empowering you with knowledge and expertise to <br />make a difference
+            </p>
+          </div>
+        </div>
+        <div class="user-name">
+          <p>Hi {{name}},</p>
+        </div>
+        <div class="Verify-sec">
+          <div class="verify-sec-content">
+            <div class="verify-title">
+              <h1>Welcome to Beauty Spot</h1>
+              <p>We are excited to have you get started. first you need to confirm your email with enter
+                the verification code below:</p>
+            </div>
+            <div class="code-verify">
+              <p>Here is the Verification Code:</p>
+              <div class="code-text">
+                <span>{{firstCode}}{{secondCode}}{{thirdCode}}{{fourthCode}}</span>
+              </div>
+              <p>If you already a member of Beauty Spot , you can simply ignore this email.</p>
+            </div>
+          </div>
+          <div class="verify-mail-img">
+            <img
+              src="https://bcoder-dev-bucket.s3.ap-south-1.amazonaws.com/ship-district/acd20629830d432330a8c98ed596b462630abd42.png"
+              alt="" />
+          </div>
+        </div>
+        <div class="store-app">
+          <p>Install the application and Join us:</p>
+          <div class="platform-store">
+            <img
+              src="https://bcoder-dev-bucket.s3.amazonaws.com/ship-district/d25c8a34af94e242ca3a319d6e8dca88c56ee0ca.png"
+              alt="" />
+            <img
+              src="https://bcoder-dev-bucket.s3.ap-south-1.amazonaws.com/ship-district/fe2f801300c11268e05c3756e30dc888ff1978f2.png"
+              alt="" />
+          </div>
+          <span>- Beauty Spot</span>
+        </div>
+        <div class="footer-templet">
+          <p>Terms & Conditions | Privacy Policy</p>
+          <p>This is an auto-generated email. Please do not reply. You receive this email because you are
+            subscriber to Beauty Spot, if you don't want to hear from us, unsubscribe.</p>
+          <p>Need assistance? Email us at Beauty Spot@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
