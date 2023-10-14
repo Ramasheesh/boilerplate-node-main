@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balkon terrace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    img{
+    width: 100%;
+    max-width: 100%;
+}
+.balkon {
+    padding: 60px 0px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    size: portrait;
+}
+.container{
+        margin-left: 50px;
+    }
+.border-line input {
+    border-bottom: 2px solid #000;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    width: 100%;
+    outline: none;
+}
+.custheading h5 {
+    margin-bottom: 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+span.check {
+    font-size: 11px;
+    text-transform: capitalize;
+}
+.cust_right {
+    justify-content: center;
+}
+</style>
+</head>
+
+<body>
+  <div class="balkon">
+    <div class="container">
+      <div class="row">
+        <h4 class="text-center pb-4">Balkon Terrace</h4>
+        <div class="col-sm-6">
+          <div class="cust">
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5>Customer</h5>
+              </div>
+              <div class="col-9 mb-1 p-0 border-line">
+                <input type="email" name="" id="" value="{{customer}}">
+              </div>
+            </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5>Address</h5>
+            </div>
+            <div class="col-9 mb-1 p-0 border-line">
+              <input type="url" name="" id="" value="{{address}}">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5></h5>
+            </div>
+            <div class="col-9 mb-1 p-0 border-line">
+              <input type="url" name="" id="">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5>Phone</h5>
+            </div>
+            <div class="col-9 mb-1 p-0 border-line">
+              <input type="tel" name="" id="" value="{{phone}}">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5>E-mail</h5>
+            </div>
+            <div class="col-9 mb-1 p-0 border-line">
+              <input type="email" name="" id="" value="{{email}}">
+            </div>
+           </div>
+            <div class="row">
+              <div class="col-6 mb-1 p-0 custheading">
+                <h5>Year of construction / last renovation</h5>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="email" name="" id="" value="{{yearOfConstruction}}">
+              </div>
+            </div>
+         <div class="row">
+          <div class="col-3 mb-1 p-0 custheading">
+            <h5>object type</h5>
+          </div>
+          <div class="col-3 mb-1 p-0 custheading">
+            <input type="checkbox" name="" checked="objectType">
+            <span class="check">detached house</span>
+          </div>
+          <div class="col-6 mb-1 p-0 border-line">
+            <input type="email" name="" id="" value="{{objectType}}">
+          </div>
+         </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5></h5>
+            </div>
+            <div class="col-3 mb-1 p-0 custheading">
+              <span class="check">Floor</span>
+            </div>
+            <div class="col-6 mb-1 p-0 border-line">
+              <input type="text" name="" id="" value="{{floor}}">
+            </div>
+           </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" checked="{{objectType}}">
+                <span class="check">Apartment in an apartment building</span>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="email" name="" id="" value="{{appartmentBuilding}}">
+              </div>
+            </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5></h5>
+            </div>
+            <div class="col-3 mb-1 p-0 custheading">
+              <span class="check">Floor</span>
+            </div>
+            <div class="col-6 mb-1 p-0 border-line">
+              <input type="text" name="" id="" value="{{floor}}">
+            </div>
+           </div>
+<div class="row">
+  <div class="col-3 mb-1 p-0 custheading">
+    <h5></h5>
+  </div>
+  <div class="col-3 mb-1 p-0 custheading">
+    <span class="check">property manager</span>
+  </div>
+  <div class="col-6 mb-1 p-0 border-line">
+    <input type="email" name="" id="" value="{{propertyManager}}">
+  </div>
+</div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5>drainage</h5>
+            </div>
+            <div class="col-4 mb-1 p-0 custheading">
+              <input type="checkbox" name="" id="" checked="{{drainageType}}">
+              <span class="check">gutter</span>
+            </div>
+            <div class="col-5 mb-1 p-0 custheading">
+              <input type="checkbox" name="" id="" value="{{sequenceType}}">
+              <span class="check">Sequence</span>
+            </div>
+           </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="" checked="{{newType}}">
+                <span class="check">New</span>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="email" name="" value={{newType}}>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" checked="{{aboutTilesSwiss}}">
+                <span class="check">about tiles Swiss</span>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="email" name="" id="" value="{{aboutTilesSwiss}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" checked="{{onSite}}">
+                <span class="check">on site</span>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="email" name="" id="" value="{{onSite}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5>stock building</h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" checked="{{thickComment}}">
+                <span class="check">Tiles in the thick bed</span>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="email" name="" id="" value="{{thickComment}}">
+              </div>
+            </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5></h5>
+            </div>
+            <div class="col-3 mb-1 p-0 custheading">
+              <input type="checkbox" name="" checked="{{thinComment}}">
+              <span class="check">Thin bed tiles
+              </span>
+            </div>
+            <div class="col-6 mb-1 p-0 border-line">
+              <input type="text" name="" id="" value="{{thinComment}}">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5></h5>
+            </div>
+            <div class="col-3 mb-1 p-0 custheading">
+              <input type="checkbox" name="" checked="{{gravelComment}}">
+              <span class="check">slabs in gravel</span>
+            </div>
+            <div class="col-6 mb-1 p-0 border-line">
+              <input type="text" name="" id="" value="{{gravelComment}}">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5></h5>
+            </div>
+            <div class="col-3 mb-1 p-0 custheading">
+              <input type="checkbox" name="" checked="{{noTooping}}">
+              <span class="check">no topping</span>
+            </div>
+            <div class="col-6 mb-1 p-0 border-line">
+              <input type="text" name="" id="" value="{{noTopping}}">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-3 mb-1 p-0 custheading">
+              <h5>underground</h5>
+            </div>
+            <div class="col-3 mb-1 p-0 custheading">
+              <input type="checkbox" name="" checked="{{concreteComment}}">
+              <span class="check">Concrete ceiling/slab
+              </span>
+            </div>
+            <div class="col-6 mb-1 p-0 border-line">
+              <input type="text" name="" id="" value="{{concreteCeiling}}">
+            </div>
+           </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name=""checked={{soilComment}}>
+                <span class="check">Soil / KFT
+  
+                </span>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{soilComment}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" checked="{{substrateOtherComment}}">
+                <span class="check">other / note
+                </span>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{substrateOtherComment}}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="cust_right">
+         <div class="row">
+          <div class="col-3 mb-1 p-0 custheading">
+            <h5>railing</h5>
+          </div>
+          <div class="col-4 mb-1 p-0 custheading">
+            <span class="check">Height from OK stock</span>
+          </div>
+          <div class="col-5 mb-1 p-0 border-line">
+            <input type="email" name="" id="" value="{{heightStock}}">
+          </div>
+         </div>
+          <div class="row">
+            <div class="col-2 mb-1 p-0 custheading">
+              <h5></h5>
+            </div>
+            <div class="col-3 mb-1 p-0 custheading">
+              <input type="checkbox" name="" checked="{{}}">
+              <span class="check">new</span>
+            </div>
+            <div class="col-7 mb-1 p-0 custheading">
+              <input type="checkbox" name="" id="" value="{{newType}}">
+              <span class="check">Stock remains / delete?</span>
+            </div>
+          </div>
+         <div class="row">
+          <div class="col-2 mb-1 p-0 custheading">
+            <h5></h5>
+          </div>
+          <div class="col-3 mb-1 p-0 custheading">
+            <input type="checkbox" name="" id="" value="{{isStockRemains}}">
+            <span class="check">about tiles Swiss</span>
+          </div>
+          <div class="col-3 mb-1 p-0 custheading">
+            <span class="check"></span>
+          </div>
+          <div class="col-4 mb-1 p-0 border-line">
+            <input type="text" name="" id=""  value="{{aboutTilesSwiss}}">
+          </div>
+         </div>
+            <div class="row">
+              <div class="col-2 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="">
+                <span class="check">on site</span>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <span class="check"></span>
+              </div>
+              <div class="col-4 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{railingOnSite}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-1 p-0 custheading">
+                <h5>Access through the apartment </h5>
+              </div>
+              <div class="col-6 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{accessComment}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="" checked="{{accessType}}">
+                <span class="check">YES</span>
+              </div>
+              <div class="col-7 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="">
+                <span class="check">NO</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2 mb-1 p-0 custheading">
+                <h5>framework</h5>
+              </div>
+              <div class="col-3 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="" value="{{frameworkIsOnSite}}">
+                <span class="check">on site </span>
+              </div>
+              <div class="col-7 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="" value="{{frameworkAboutTilesSwiss}}">
+                <span class="check">about tiles Swiss</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5>miscellaneous</h5>
+              </div>
+              <div class="col-9 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{miscellaneous}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-9 mb-1 p-0 border-line">
+                <input type="text" name="" id="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-9 mb-1 p-0 border-line">
+                <input type="text" name="" id="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5 mb-1 p-0 custheading">
+                <h5>scheduled date for implementation</h5>
+              </div>
+              <div class="col-7 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{scheduleDate}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-1 p-0 custheading">
+                <h5>personal contributions</h5>
+              </div>
+              <div class="col-4 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="" checked="{{personalContribution}}">
+                <span class="check">YES </span>
+              </div>
+              <div class="col-4 mb-1 p-0 custheading">
+                <input type="checkbox" name="" id="">
+                <span class="check">NO</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-8 mb-1 p-0 border-line">
+                <input type="text" name="" id="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-8 mb-1 p-0 border-line">
+                <input type="text" name="" id="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-8 mb-1 p-0 border-line">
+                <input type="text" name="" id="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-1 p-0 custheading">
+                <h5>Special Notes</h5>
+              </div>
+              <div class="col-8 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{specialNote}}">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-8 mb-1 p-0 border-line">
+                <input type="text" name="" id="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-1 p-0 custheading">
+                <h5></h5>
+              </div>
+              <div class="col-8 mb-1 p-0 border-line">
+                <input type="text" name="" id="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2 mb-1 p-0 custheading">
+                <h5>Date</h5>
+              </div>
+              <div class="col-4 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{date}}">
+              </div>
+              <div class="col-2 mb-1 p-0 custheading">
+                <h5>editor</h5>
+              </div>
+              <div class="col-4 mb-1 p-0 border-line">
+                <input type="text" name="" id="" value="{{editor}}">
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
